@@ -80,13 +80,14 @@ teaching_experience:
 # Skills
 skills:
   - category: Programming Languages
-    items: Python, R, Java, C++ (Placeholder: List your proficient languages)
+    items: "Python, R, Java, C++ (Placeholder: List your proficient languages)"
   - category: Software & Tools
-    items: LaTeX, Git, Docker, MATLAB, [Specific Analysis Software] (Placeholder)
+    items: "LaTeX, Git, Docker, MATLAB, [Specific Analysis Software] (Placeholder)"
   - category: Methodologies
-    items: Machine Learning, Statistical Analysis, Qualitative Research, [Specific Methods] (Placeholder)
+    items: "Machine Learning, Statistical Analysis, Qualitative Research, [Specific Methods] (Placeholder)"
   - category: Languages
-    items: English (Native), [Other Language (Proficiency Level)] (Placeholder)
+    items: "English (Native), [Other Language (Proficiency Level)] (Placeholder)"
+
 
 # Professional Service / Activities
 service:
