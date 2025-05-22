@@ -18,7 +18,7 @@ keywords: academic website, portfolio, research, publications, phd # add your ow
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
 icon: ⚛️ # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 
-url: "https://mitchv34.github.io/" # IMPORTANT: Replace with your GitHub Pages URL (e.g., https://yourusername.github.io)
+url: "https://mitchv34.github.io/my-website" # IMPORTANT: Replace with your GitHub Pages URL (e.g., https://yourusername.github.io)
 baseurl: "" # IMPORTANT: Replace with your repository name if deploying to a subdirectory (e.g., /your-repo-name/). Leave blank if deploying to root (e.g., yourusername.github.io).
 last_updated: false # set to true if you want to display last updated in the footer
 impressum_path: # set to path to include impressum link in the footer, use the same path as permalink in a page, helps to conform with EU GDPR
