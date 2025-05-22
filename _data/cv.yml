@@ -1,0 +1,111 @@
+# Placeholder CV data for al-folio theme
+# This file should be located at _data/cv.yml
+
+# Personal Information
+name: Your Full Name
+title: PhD Candidate | [Your Field of Study]
+email: your.email@example.com
+phone: (555) 123-4567 # Optional
+website: https://yourusername.github.io # Link to this website once deployed
+linkedin: yourlinkedinprofile # Username only
+github: yourgithubusername # Username only
+google_scholar: YOUR_GOOGLE_SCHOLAR_ID # Your Google Scholar ID (the string of characters in the URL)
+orcid: XXXX-XXXX-XXXX-XXXX # Your ORCID iD
+
+# Education
+education:
+  - degree: PhD in [Your Field]
+    university: [Your University Name]
+    location: [City, State]
+    years: 20XX - Present
+    # Optional: Add a brief description or thesis title
+    # description: "Thesis: Investigating Placeholder Phenomena in Academic Research."
+
+  - degree: MSc in [Your Field]
+    university: [Previous University Name]
+    location: [City, State]
+    years: 20XX - 20XX
+    # Optional: Add a brief description or thesis title
+    # description: "Focused on advanced placeholder theories."
+
+  - degree: BSc in [Your Field or Related Field]
+    university: [Undergraduate University Name]
+    location: [City, State]
+    years: 20XX - 20XX
+
+# Research Experience
+research_experience:
+  - role: Research Assistant / PhD Researcher
+    organization: [Your Lab/Research Group, Your University]
+    location: [City, State]
+    years: 20XX - Present
+    description: >
+      (Placeholder: Describe your research responsibilities, projects, and contributions.
+      Use bullet points for clarity if needed.)
+      *   Led research on [Specific Project/Topic 1], resulting in [Key Outcome/Publication].
+      *   Developed and implemented [Specific Methodology/Software] for [Purpose].
+      *   Collaborated with a team of X researchers on [Another Project/Topic].
+
+  - role: [Previous Research Role, e.g., Research Intern]
+    organization: [Previous Institution/Company]
+    location: [City, State]
+    years: [Year(s)]
+    description: >
+      (Placeholder: Describe your responsibilities and achievements in this role.)
+
+# Publications
+# This section is often generated automatically from _bibliography/papers.bib on the Publications page.
+# You can choose to list a few key publications here if desired, or direct readers to the Publications page.
+# publications_summary: "For a full list of publications, please see the [Publications](/publications/) page."
+
+# Awards and Honors
+awards:
+  - award: [Name of Award/Honor 1]
+    organization: [Awarding Organization]
+    year: 20XX
+    # Optional: description: "For outstanding research in placeholder studies."
+
+  - award: [Name of Scholarship/Fellowship]
+    organization: [Awarding Organization]
+    year: 20XX
+
+# Teaching Experience
+teaching_experience:
+  - role: [e.g., Teaching Assistant, Guest Lecturer]
+    course: [Course Code and Title]
+    institution: [Your University]
+    year: [Term, Year]
+    # Optional: description: "Led weekly discussion sections for N students."
+
+# Skills
+skills:
+  - category: Programming Languages
+    items: Python, R, Java, C++ (Placeholder: List your proficient languages)
+  - category: Software & Tools
+    items: LaTeX, Git, Docker, MATLAB, [Specific Analysis Software] (Placeholder)
+  - category: Methodologies
+    items: Machine Learning, Statistical Analysis, Qualitative Research, [Specific Methods] (Placeholder)
+  - category: Languages
+    items: English (Native), [Other Language (Proficiency Level)] (Placeholder)
+
+# Professional Service / Activities
+service:
+  - activity: [e.g., Peer Reviewer for Journal/Conference]
+    organization: [Journal Name / Conference Name]
+    year: 20XX - Present
+
+  - activity: [e.g., Volunteer for Conference/Workshop]
+    organization: [Conference/Workshop Name]
+    year: 20XX
+
+# References
+references: Available upon request.
+
+# You can add custom sections as needed, for example:
+# grants:
+#   - grant_title: "Funding for Placeholder Research"
+#     funding_agency: "National Placeholder Foundation"
+#     years: 20XX - 20XX
+#     amount: "$XX,XXX"
+#     role: "Principal Investigator"
+
