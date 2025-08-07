@@ -46,4 +46,5 @@ group :other_plugins do
     gem "httparty"
     gem "observer"   # for jekyll-scholar
     gem "ostruct"    # for jekyll-twitter-plugin
+    gem "faraday-retry" # for faraday v2.0+ support
 end
