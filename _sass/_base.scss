@@ -383,6 +383,17 @@ ul.task-list input[type="checkbox"] {
   }
 }
 
+// Navbar collapse functionality - only on mobile
+@media (max-width: 575.98px) {
+  .navbar-collapse {
+    display: none !important;
+    
+    &.show {
+      display: block !important;
+    }
+  }
+}
+
 #light-toggle,
 #search-toggle {
   padding: 0;
