@@ -56,6 +56,11 @@ layout: default
       {% include latest_posts.liquid %}
     {% endif %}
 
+    <!-- Job Market Paper -->
+    {% if page.jmp_paper %}
+      {% include jmp.liquid %}
+    {% endif %}
+
     <!-- Selected papers -->
     {% if page.selected_papers %}
       <h2>

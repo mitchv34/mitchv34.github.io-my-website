@@ -1,112 +1,234 @@
-# Placeholder CV data for al-folio theme
-# This file should be located at _data/cv.yml
+- title: Education
+  type: time_table
+  contents:
+    - title: PhD in Economics
+      institution: University of Wisconsin-Madison
+      year: 2020 - 
+      location: Madison, WI
+      
+    - title: Master of Science in Economics  
+      institution: University of Wisconsin-Madison
+      year: 2024
+      location: Madison, WI
+      
+    - title: Master in Economics
+      institution: Centro de Investigación y Docencia Económicas
+      year: 2017 - 2019
+      location: Mexico
+      
+    - title: B.S. in Mathematics
+      institution: Universidad de la Habana
+      year: 2009 - 2014
+      location: Cuba
 
-# Personal Information
-name: Your Full Name
-title: PhD Candidate | [Your Field of Study]
-email: your.email@example.com
-phone: (555) 123-4567 # Optional
-website: https://yourusername.github.io # Link to this website once deployed
-linkedin: yourlinkedinprofile # Username only
-github: yourgithubusername # Username only
-google_scholar: YOUR_GOOGLE_SCHOLAR_ID # Your Google Scholar ID (the string of characters in the URL)
-orcid: XXXX-XXXX-XXXX-XXXX # Your ORCID iD
+- title: Research Interests
+  type: list
+  contents:
+    - Labor Economics
+    - Macroeconomics
+    - Applied Econometrics
+    - Machine Learning
 
-# Education
-education:
-  - degree: PhD in [Your Field]
-    university: [Your University Name]
-    location: [City, State]
-    years: 20XX - Present
-    # Optional: Add a brief description or thesis title
-    # description: "Thesis: Investigating Placeholder Phenomena in Academic Research."
+- title: Working Papers
+  type: time_table
+  contents:
+    - title: "Work-From-Home and the Wage Premium"
+      year: JMP
+      description: with Anna Lukianova
+      
+    - title: "Spatial Sorting of Heterogeneous Workers and Firms"
+      year: Working Paper
+      
+    - title: "Industry Workforce Heterogeneity and Wage Inequality"
+      year: Working Paper
+      
+    - title: "Matching Problem in a Multi-Variate Setting"
+      year: Working Paper
 
-  - degree: MSc in [Your Field]
-    university: [Previous University Name]
-    location: [City, State]
-    years: 20XX - 20XX
-    # Optional: Add a brief description or thesis title
-    # description: "Focused on advanced placeholder theories."
-
-  - degree: BSc in [Your Field or Related Field]
-    university: [Undergraduate University Name]
-    location: [City, State]
-    years: 20XX - 20XX
-
-# Research Experience
-research_experience:
-  - role: Research Assistant / PhD Researcher
-    organization: [Your Lab/Research Group, Your University]
-    location: [City, State]
-    years: 20XX - Present
-    description: >
-      (Placeholder: Describe your research responsibilities, projects, and contributions.
-      Use bullet points for clarity if needed.)
-      *   Led research on [Specific Project/Topic 1], resulting in [Key Outcome/Publication].
-      *   Developed and implemented [Specific Methodology/Software] for [Purpose].
-      *   Collaborated with a team of X researchers on [Another Project/Topic].
-
-  - role: [Previous Research Role, e.g., Research Intern]
-    organization: [Previous Institution/Company]
-    location: [City, State]
-    years: [Year(s)]
-    description: >
-      (Placeholder: Describe your responsibilities and achievements in this role.)
+- title: Experience
+  type: time_table
+  contents:
+    - title: Research Assistant
+      institution: University of Wisconsin-Madison
+      year: 2022 - 2023
+      description: 
+        - Supervisor Job Boerma
+        
+    - title: Research Assistant
+      institution: University of Wisconsin-Madison  
+      year: 2022
+      description:
+        - Supervisors Junjie Guo and Ananth Seshadri
+        - Project "Understanding Racial Disparities in Financial Preparedness for Retirement"
+        
+    - title: Research Assistant
+      institution: University of Wisconsin-Madison
+      year: 2022
+      description: Supervisor Jessica Pac
+      
+    - title: Junior Researcher
+      institution: Laboratorio Nacional de Políticas Públicas, Data Science Unit
+      year: 2019 - 2020
+      location: Mexico
+      description: Big Data, Machine Learning and Text Mining application to public policy
+      
+    - title: Research Assistant
+      institution: Centro de Investigación y Docencia Económicas
+      year: 2019
+      location: Mexico
+      description: Supervisor Kaniska Dam
+      
+    - title: Junior Researcher
+      institution: CENATAV
+      year: 2014 - 2016
+      location: Cuba
 
 # Publications
 # This section is often generated automatically from _bibliography/papers.bib on the Publications page.
 # You can choose to list a few key publications here if desired, or direct readers to the Publications page.
 # publications_summary: "For a full list of publications, please see the [Publications](/publications/) page."
 
-# Awards and Honors
-awards:
-  - award: [Name of Award/Honor 1]
-    organization: [Awarding Organization]
-    year: 20XX
-    # Optional: description: "For outstanding research in placeholder studies."
+- title: Awards and Fellowships
+  type: time_table
+  contents:
+    - title: University of Wisconsin-Madison Summer Fellowship
+      year: 2024
+      institution: University of Wisconsin-Madison
+      location: United States
+      
+    - title: CONACYT Excellence Scholarship Program for Postgraduate Studies
+      year: 2017 - 2019
+      institution: CONACYT
+      location: Mexico
 
-  - award: [Name of Scholarship/Fellowship]
-    organization: [Awarding Organization]
-    year: 20XX
+- title: Teaching Experience
+  type: time_table
+  contents:
+    - title: Teaching Assistant - Data Analytics for Economists
+      institution: University of Wisconsin-Madison
+      year: Spring 2025
+      description: Instructor John Brauer
+      
+    - title: Teaching Assistant - Financial Microeconomics (MS Level) with Python
+      institution: University of Wisconsin-Madison
+      year: Fall 2024
+      description: Instructor Marek Weretka
+      
+    - title: Teaching Assistant - Data Analytics for Economists
+      institution: University of Wisconsin-Madison
+      year: Fall 2023
+      description: Instructor Kim Ruhl
+      
+    - title: Teaching Assistant - Intermediate Macroeconomics
+      institution: University of Wisconsin-Madison
+      year: Spring 2023
+      description: Instructor Paolo Martellini
+      
+    - title: Head Teaching Assistant - Principles of Microeconomics
+      institution: University of Wisconsin-Madison
+      year: Fall 2021
+      description: Instructor Gregory Pac
+      
+    - title: Teaching Assistant - Principles of Microeconomics
+      institution: University of Wisconsin-Madison
+      year: Spring 2021
+      description: Instructor Alan Sorensen
+      
+    - title: Teaching Assistant - Principles of Microeconomics
+      institution: University of Wisconsin-Madison
+      year: Fall 2020
+      description: Instructor Gregory Pac
+      
+    - title: Teaching Assistant - Economics of Information (MS Level)
+      institution: Centro de Investigación y Docencia Económicas
+      year: Fall 2019
+      location: Mexico
+      description: Instructor Kaniska Dam
+      
+    - title: Teaching Assistant - Mathematics (MS Level)
+      institution: Centro de Investigación y Docencia Económicas
+      year: Fall 2019
+      location: Mexico
+      description: Instructor Kaniska Dam
+      
+    - title: Teaching Assistant - Quantitative Methods for Political Science (MS Level)
+      institution: Centro de Investigación y Docencia Económicas
+      year: Spring 2019
+      location: Mexico
+      description: Instructor Aldo Ponce
+      
+    - title: External Professor - Ordinary Differential Equations (undergraduate)
+      institution: Universidad de la Habana
+      year: Fall 2016
+      location: Cuba
+      
+    - title: External Professor - Integral Calculus (undergraduate)
+      institution: Universidad de la Habana
+      year: Fall 2016
+      location: Cuba
 
-# Teaching Experience
-teaching_experience:
-  - role: [e.g., Teaching Assistant, Guest Lecturer]
-    course: [Course Code and Title]
-    institution: [Your University]
-    year: [Term, Year]
-    # Optional: description: "Led weekly discussion sections for N students."
+- title: Technical Skills
+  type: list_groups
+  contents:
+    - category: Programming
+      icon: fas fa-code
+      items:
+        - Python (NumPy, pandas, scikit-learn, TensorFlow) - Proficient
+        - Julia - Proficient
+        - R (tidyverse, ggplot2), Stata, MATLAB - Advanced
+        - FORTRAN, C++, SQL - Familiar
+        
+    - category: Modeling
+      icon: fas fa-chart-line
+      items:
+        - Economic and Mathematical Modeling
+        - Dynamic Programming
+        
+    - category: Data Science
+      icon: fas fa-database
+      items:
+        - Machine Learning
+        - Statistical Modeling
+        - Predictive Analytics
+        - Natural Language Processing
+        
+    - category: Mathematical Tools
+      icon: fas fa-calculator
+      items:
+        - Optimization
+        - Linear Algebra
+        - Convex Analysis
+        - Functional Analysis
+        
+    - category: Software
+      icon: fas fa-tools
+      items:
+        - Visual Studio Code
+        - LaTeX
+        - Git
+        - Advanced Excel
+        - Tableau, Power BI
+        
+    - category: Operating Systems
+      icon: fas fa-desktop
+      items:
+        - Linux
+        - macOS
+        - Windows
 
-# Skills
-skills:
-  - category: Programming Languages
-    items: "Python, R, Java, C++ (Placeholder: List your proficient languages)"
-  - category: Software & Tools
-    items: "LaTeX, Git, Docker, MATLAB, [Specific Analysis Software] (Placeholder)"
-  - category: Methodologies
-    items: "Machine Learning, Statistical Analysis, Qualitative Research, [Specific Methods] (Placeholder)"
-  - category: Languages
-    items: "English (Native), [Other Language (Proficiency Level)] (Placeholder)"
+- title: Seminars and Schools
+  type: time_table
+  contents:
+    - title: Econometric Society Summer School in Dynamic Structural Econometrics
+      year: Summer 2024
+      
+    - title: University of Wisconsin-Madison Summer Fellowship Presentation
+      year: Summer 2024
 
-
-# Professional Service / Activities
-service:
-  - activity: [e.g., Peer Reviewer for Journal/Conference]
-    organization: [Journal Name / Conference Name]
-    year: 20XX - Present
-
-  - activity: [e.g., Volunteer for Conference/Workshop]
-    organization: [Conference/Workshop Name]
-    year: 20XX
-
-# References
-references: Available upon request.
-
-# You can add custom sections as needed, for example:
-# grants:
-#   - grant_title: "Funding for Placeholder Research"
-#     funding_agency: "National Placeholder Foundation"
-#     years: 20XX - 20XX
-#     amount: "$XX,XXX"
-#     role: "Principal Investigator"
+- title: Other Information
+  type: list
+  contents:
+    - <u>Languages:</u> English (fluent), Spanish (native)
+    - <u>Status:</u> US Permanent Resident
+    - <u>Citizenship:</u> Cuba
 

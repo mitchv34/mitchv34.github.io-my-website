@@ -1,0 +1,110 @@
+---
+---
+<div class="jmp-entry">
+  <!-- Title -->
+  <div class="title">{{ entry.title }}</div>
+  
+  <!-- Author -->
+  <div class="author">
+    {% assign author_array_size = entry.author_array | size %}
+    {%- for author in entry.author_array -%}
+      {% assign author_is_self = false %}
+      {%- assign author_last_name = author.last | regex_replace: '[*∗†‡§¶‖&^]', '' -%}
+      {% if site.scholar.last_name contains author_last_name %}
+        {% if site.scholar.first_name contains author.first %}
+          {% assign author_is_self = true %}
+        {% endif %}
+      {% endif %}
+      
+      {%- if forloop.length > 1 -%}
+        {% if forloop.first == false -%}
+          {%- if forloop.length > 2 %}, {% elsif forloop.length == 2 %} {% endif %}
+        {%- endif %}
+        {%- if forloop.last %}and {% endif -%}
+      {% endif %}
+      {%- if author_is_self -%}
+        <em>{{- author.first }} {{ author.last -}}</em>
+      {%- else -%}
+        {{- author.first }} {{ author.last -}}
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+
+  <!-- Year -->
+  {% if entry.year %}
+    <div class="year">{{ entry.year }}</div>
+  {% endif %}
+
+  <!-- Abstract -->
+  {% if entry.abstract %}
+    <div class="abstract">
+      <strong>Abstract:</strong> {{ entry.abstract }}
+    </div>
+  {% endif %}
+
+  <!-- Buttons -->
+  <div class="links">
+    {% if entry.pdf %}
+      <a class="btn btn-sm z-depth-0" href="{{ entry.pdf | prepend: '/assets/pdf/' | relative_url }}" role="button">PDF</a>
+    {% endif %}
+    {% if entry.slides %}
+      <a class="btn btn-sm z-depth-0" href="{{ entry.slides | prepend: '/assets/pdf/' | relative_url }}" role="button">Slides</a>
+    {% endif %}
+    {% if entry.code %}
+      <a class="btn btn-sm z-depth-0" href="{{ entry.code }}" role="button" target="_blank">Code</a>
+    {% endif %}
+    {% if entry.note %}
+      <span class="badge">{{ entry.note }}</span>
+    {% endif %}
+  </div>
+</div>
+
+<style>
+.jmp-publications .jmp-entry {
+  margin-bottom: 2rem;
+}
+
+.jmp-publications .title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.jmp-publications .author {
+  font-style: italic;
+  margin-bottom: 0.5rem;
+}
+
+.jmp-publications .year {
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.jmp-publications .abstract {
+  margin-bottom: 1rem;
+  text-align: justify;
+  line-height: 1.6;
+}
+
+.jmp-publications .abstract strong {
+  color: #333;
+}
+
+.jmp-publications .links {
+  margin-top: 1rem;
+}
+
+.jmp-publications .links .btn {
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.jmp-publications .badge {
+  background-color: #007bff;
+  color: white;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.8rem;
+  margin-left: 0.5rem;
+}
+</style>

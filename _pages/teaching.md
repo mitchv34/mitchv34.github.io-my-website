@@ -3,7 +3,7 @@ layout: page
 title: Teaching
 permalink: /teaching/
 description: Information about my teaching experience and philosophy.
-nav: true
+nav: false
 nav_order: 4 # Adjust order as needed
 ---
 

@@ -1,43 +1,43 @@
-# al-folio
+# Mitchell Valdes-Bobes - Academic Website
 
-<div align="center">
+This is my personal academic website built using the [al-folio](https://github.com/alshedivat/al-folio) Jekyll theme.
 
-[![Preview](readme_preview/al-folio-preview.png)](https://alshedivat.github.io/al-folio/)
+## About
 
-**A simple, clean, and responsive [Jekyll](https://jekyllrb.com/) theme for academics.**
+This website showcases my academic work, research interests, publications, and projects. It serves as a professional portfolio and a way to connect with fellow researchers and collaborators.
+
+## Features
+
+- **Publications**: Automatically generated from BibTeX files
+- **Projects**: Showcase of research and development projects
+- **Blog**: Updates and insights on research
+- **CV**: Professional curriculum vitae
+- **News**: Latest updates and announcements
+
+## Local Development
+
+To run this website locally:
+
+```bash
+# Using Docker (recommended)
+docker compose up
+
+# Or using Jekyll directly
+bundle install
+bundle exec jekyll serve
+```
+
+## Deployment
+
+This website is automatically deployed to GitHub Pages when changes are pushed to the main branch.
+
+## Contact
+
+Feel free to reach out through the contact information provided on the website.
 
 ---
 
-[![deploy](https://github.com/alshedivat/al-folio/actions/workflows/deploy.yml/badge.svg)](https://github.com/alshedivat/al-folio/actions/workflows/deploy.yml)
-[![Maintainers](https://img.shields.io/badge/maintainers-4-success.svg)](#maintainers)
-[![GitHub contributors](https://img.shields.io/github/contributors/alshedivat/al-folio.svg)](https://github.com/alshedivat/al-folio/graphs/contributors/)
-[![Docker Image Version](https://img.shields.io/docker/v/amirpourmand/al-folio?sort=semver&label=docker%20image&color=blueviolet)](https://hub.docker.com/r/amirpourmand/al-folio)
-[![Docker Image Size](https://img.shields.io/docker/image-size/amirpourmand/al-folio?sort=date&label=docker%20image%20size&color=blueviolet)](https://hub.docker.com/r/amirpourmand/al-folio)
-[![Docker Pulls](https://img.shields.io/docker/pulls/amirpourmand/al-folio?color=blueviolet)](https://hub.docker.com/r/amirpourmand/al-folio)
-
-[![GitHub release](https://img.shields.io/github/v/release/alshedivat/al-folio)](https://github.com/alshedivat/al-folio/releases/latest)
-[![GitHub license](https://img.shields.io/github/license/alshedivat/al-folio?color=blue)](https://github.com/alshedivat/al-folio/blob/main/LICENSE)
-[![GitHub stars](https://img.shields.io/github/stars/alshedivat/al-folio)](https://github.com/alshedivat/al-folio)
-[![GitHub forks](https://img.shields.io/github/forks/alshedivat/al-folio)](https://github.com/alshedivat/al-folio/fork)
-
-</div>
-
-## User community
-
-The vibrant community of **al-folio** users is growing!
-Academics around the world use this theme for their homepages, blogs, lab pages, as well as webpages for courses, workshops, conferences, meetups, and more.
-Check out the community webpages below.
-Feel free to add your own page(s) by sending a PR.
-
-<table>
-<tr>
-<td>Academics</td>
-<td>
-<a href="https://martinbulla.github.io" target="_blank">★</a>
-<a href="https://maruan.alshedivat.com" target="_blank">★</a>
-<a href="https://www.cs.columbia.edu/~chen1ru/" target="_blank">★</a>
-<a href="https://maithraraghu.com" target="_blank">★</a>
-<a href="https://platanios.org" target="_blank">★</a>
+*Powered by Jekyll with al-folio theme, hosted on GitHub Pages.*
 <a href="https://otiliastr.github.io" target="_blank">★</a>
 <a href="https://www.maths.dur.ac.uk/~sxwc62/" target="_blank">★</a>
 <a href="https://jessachandler.com/" target="_blank">★</a>

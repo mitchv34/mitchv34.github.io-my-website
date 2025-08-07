@@ -2,24 +2,22 @@
 # Site settings
 # -----------------------------------------------------------------------------
 
-title: Mitchell Valdes-Bobes - Academic Portfolio # the website title (if blank, full name will be used instead)
+title: Mitchell Valdes-Bobes # the website title (if blank, full name will be used instead)
 first_name: Mitchell
 middle_name: 
 last_name: Valdes-Bobes
 contact_note: >
-  You can update this note to specify the best way to reach you.
+  Feel free to reach out via email or connect with me on social media.
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  PhD Candidate | Research Interests | Publications | Projects
+  Academic website of Mitchell Valdes-Bobes - PhD Candidate in Economics at the University of Wisconsin–Madison.
 footer_text: >
-  Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
-  Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
-  Photos from <a href="https://unsplash.com" target="_blank">Unsplash</a>.
-keywords: academic website, portfolio, research, publications, phd # add your own keywords or leave empty
+keywords: Mitchell Valdes-Bobes, academic, research, PhD, publications, economics, labor economics, macroeconomics, University of Wisconsin–Madison # keywords for search engines
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
-icon: ⚛️ # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
+icon: creative-thinking.ico # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 
-url: "https://mitchv34.github.io/my-website" # IMPORTANT: Replace with your GitHub Pages URL (e.g., https://yourusername.github.io)
-baseurl: "" # IMPORTANT: Replace with your repository name if deploying to a subdirectory (e.g., /your-repo-name/). Leave blank if deploying to root (e.g., yourusername.github.io).
+url: "https://mitchv34.github.io" # the base hostname & protocol for your site
+baseurl: "/mitchv34.github.io-my-website" # the subpath of your site, e.g. /blog/ - empty for local development
+# baseurl: "" # uncomment for local development
 last_updated: false # set to true if you want to display last updated in the footer
 impressum_path: # set to path to include impressum link in the footer, use the same path as permalink in a page, helps to conform with EU GDPR
 back_to_top: true # set to false to disable the back to top button
@@ -42,7 +40,7 @@ repo_trophies:
 # will use title and url fields
 # Take a look to https://github.com/jekyll/jekyll-feed for more customization
 
-rss_icon: true
+rss_icon: false
 
 # -----------------------------------------------------------------------------
 # Layout
@@ -172,7 +170,7 @@ kramdown:
       start_line: 1
 
 # Includes & excludes
-include: ["_pages", "_scripts"]
+include: ["_pages", "_scripts", "assets"]
 exclude:
   - bin/
   - CONTRIBUTING.md
@@ -265,8 +263,8 @@ display_categories: ["external-services"] # these categories will be displayed o
 # -----------------------------------------------------------------------------
 
 scholar:
-  last_name: [Name] # Placeholder, user should update
-  first_name: [Your, Y.] # Placeholder, user should update
+  last_name: [Valdes-Bobes] # Update with your actual last name
+  first_name: [Mitchell, M.] # Update with your actual first name
 
   style: apa
   locale: en

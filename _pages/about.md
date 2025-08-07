@@ -1,43 +1,41 @@
 ---
 layout: about
-title: About Me
+title: About
 permalink: /
-subtitle: PhD Candidate | Aspiring Researcher | [Your University/Affiliation]
+subtitle: PhD Candidate
 
 profile:
   align: right
-  image: prof_pic.jpg # Placeholder: Please replace prof_pic.jpg in assets/img/ with your profile picture.
+  image: my_new_pic.jpg # Add your actual profile picture to assets/img/
   image_circular: false # crops the image to make it circular
-  more_info: >
-    <p>Office: [Your Office Number]</p>
-    <p>[Your Department]</p>
-    <p>[Your University]</p>
-    <p>[City, State, Zip Code]</p>
+  more_info: 
 
-selected_papers: true # includes a list of papers marked as "selected={true}"
-social: true # includes social icons at the bottom of the page. Configure these in _config.yml or _data/social.yml
+jmp_paper: true # includes job market paper marked as "jmp={true}"
+selected_papers: false # includes a list of papers marked as "selected={true}"
+social: true # includes social icons at the bottom of the page
 
 announcements:
-  enabled: true # includes a list of news items from _news folder
+  enabled: false # includes a list of news items from _news folder
   scrollable: true # adds a vertical scroll bar if there are more than 3 news items
   limit: 5 # leave blank to include all the news in the `_news` folder
 
 latest_posts:
-  enabled: true # includes a list of latest blog posts from _posts folder
+  enabled: false # includes a list of latest blog posts from _posts folder
   scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
   limit: 3 # leave blank to include all the blog posts
 ---
 
-Welcome to my academic website! I am a PhD candidate at [Your University], specializing in [Your Broad Field of Study]. My research focuses on [Your Specific Research Area 1], [Your Specific Research Area 2], and [Your Specific Research Area 3]. I am passionate about advancing knowledge in these areas and contributing to the academic community.
+Welcome to my academic website! I’m Mitchell Valdes-Bobes, a sixth-year PhD candidate in Economics at the University of Wisconsin–Madison. My work sits at the intersection of macroeconomics and labor economics, where I use structural search models to study how policy and firm organization shape labor-market outcomes.
 
-This website serves as a central hub for my academic activities. Here you can find information about my research interests, a list of my publications, details about my ongoing and past projects, my teaching experience, and my curriculum vitae. 
+**Research Interests:**
 
-I am currently on the job market and actively seeking [Type of Position, e.g., postdoctoral, faculty, research scientist] positions where I can apply my skills and continue my research endeavors. 
+- Labor market dynamics
+- Search and matching theory
+- Policy impacts on employment
 
-Please feel free to explore the different sections of this website to learn more about my work. If you have any questions or would like to discuss potential collaborations, please do not hesitate to contact me.
+**Current Focus:**
 
-**Placeholder for more detailed biography:**
-*You can expand this section with more details about your academic journey, motivations, key achievements, and future aspirations. Consider including information about your educational background, significant research experiences, any awards or recognitions you have received, and your broader impact goals.* 
+- Analyzing the effects of remote work on labor market outcomes.
+- Exploring the implications of generative AI on labor markets.
 
-*Remember to replace `prof_pic.jpg` in the `assets/img/` folder with your actual profile picture. You can also customize the social media links by editing the `_config.yml` file or, if it exists, the `_data/social.yml` file.* 
-
+Please don't hesitate to contact me if you have questions about my work or are interested in potential collaborations.

@@ -3,7 +3,7 @@ layout: page
 title: Contact
 permalink: /contact/
 description: How to get in touch with me.
-nav: true
+nav: false
 nav_order: 6 # Adjust order as needed
 ---
 

@@ -3,7 +3,7 @@ layout: page
 title: Projects
 permalink: /projects/
 description: A showcase of my key research and development projects.
-nav: true
+nav: false
 nav_order: 3 # Adjust order as needed
 display_categories: [research, software, other] # Example categories, customize as needed
 horizontal: false # Set to true for a different layout if preferred
