@@ -16,8 +16,8 @@ lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
 icon: creative-thinking.ico # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 
 url: "https://mitchv34.github.io" # the base hostname & protocol for your site
-baseurl: "/mitchv34.github.io-my-website" # the subpath of your site, e.g. /blog/ - empty for local development
-# baseurl: "" # uncomment for local development
+baseurl: "" # the subpath of your site, e.g. /blog/ - empty for local development
+# baseurl: "/mitchv34.github.io-my-website" # uncomment for project pages deployment
 last_updated: false # set to true if you want to display last updated in the footer
 impressum_path: # set to path to include impressum link in the footer, use the same path as permalink in a page, helps to conform with EU GDPR
 back_to_top: true # set to false to disable the back to top button
