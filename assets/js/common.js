@@ -57,4 +57,20 @@ $(document).ready(function () {
     trigger: "hover",
   });
 
+  // Simple navbar toggle
+  console.log('Setting up navbar toggle...');
+
+  $(document).on('click', '.navbar-toggler', function(e) {
+    e.preventDefault();
+    console.log('Navbar toggle clicked!');
+
+    var $menu = $('#navbarNav');
+    console.log('Menu element found:', $menu.length);
+
+    $menu.toggleClass('show');
+    console.log('Menu classes after toggle:', $menu.attr('class'));
+
+    // Toggle button state
+    $(this).toggleClass('collapsed');
+  });
 });
