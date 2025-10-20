@@ -1,128 +1,85 @@
-name: "Mitchell Valdes-Bobes"
-references:
-  - name: "Rasmus Lentz"
-    phone: "(608) 262-5373"
-    email: "rlentz@wisc.edu"
-  - name: "Carter Braxton"
-    phone: "(608) 265-2620"
-    email: "jcbraxton@wisc.edu"
-  - name: "Kenneth D. West"
-    phone: "(608) 262-0033"
-    email: "kdwest@wisc.edu"
-contact:
-  address: "1180 Observatory Drive, Madison, WI 53706-1393"
-  phone: "+1-608-598-8525"
-  email: "valdsbobes@wisc.edu"
-  github: "https://github.com/mitchv34"
-  website: "https://mitchv34.github.io/mitchv34.github.io-my-website/"
-pdf_path: "/assets/Mitchell_Valdes-Bobes_CV.pdf" # <-- update to the actual path/filename you just pushed
+- title: Contact
+  type: map
+  contents:
+    - name: Email
+      value: valdsbobes@wisc.edu
+    - name: Phone
+      value: +1-608-598-8525
+    - name: Address
+      value: 1180 Observatory Drive, Madison, WI 53706-1393
+    - name: GitHub
+      value: https://github.com/mitchv34
+    - name: Website
+      value: https://mitchv34.github.io/mitchv34.github.io-my-website/
 
-summary: ""
-research_interests:
-  - "Labor Economics"
-  - "Macroeconomics"
-  - "Applied Econometrics"
-  - "Machine Learning"
+- title: Research Interests
+  type: list
+  contents:
+    - Labor Economics
+    - Macroeconomics
+    - Applied Econometrics
+    - Machine Learning
 
-education:
-  - degree: "PhD Economics"
-    institution: "University of Wisconsin-Madison"
-    dates: "August 2020 - May 2026 (Expected)"
-  - degree: "Master of Science - Economics"
-    institution: "University of Wisconsin-Madison"
-    dates: "December 2024"
-  - degree: "Master in Economics"
-    institution: "Centro de Investigación y Docencia Económicas, Mexico"
-    dates: "May 2017 - June 2019"
-  - degree: "Bachelor of Mathematics"
-    institution: "Universidad de la Habana, Cuba"
-    dates: "September 2009 - June 2014"
+- title: Education
+  type: time_table
+  contents:
+    - title: PhD Economics
+      institution: University of Wisconsin-Madison
+      year: 2020 -
+      location: Madison, WI
+    - title: Master of Science - Economics
+      institution: University of Wisconsin-Madison
+      year: 2024
+      location: Madison, WI
+    - title: Master in Economics
+      institution: Centro de Investigación y Docencia Económicas (CIDE)
+      year: 2017 - 2019
+      location: Mexico City, Mexico
+    - title: Bachelor of Mathematics
+      institution: Universidad de la Habana
+      year: 2009 - 2014
+      location: Havana, Cuba
 
-working_papers:
-  - title: "Work-From-Home and the Wage Premium"
-    note: "(with Anna Lukianova), JMP"
-  - title: "Spatial Sorting of Heterogeneous Workers and Firms"
-  - title: "Industry Workforce Heterogeneity and Wage Inequality"
-  - title: "Matching Problem in a Multi-Variate Setting"
+- title: Working Papers
+  type: list
+  contents:
+    - "Work-From-Home and the Wage Premium (with Anna Lukianova), JMP"
+    - "Spatial Sorting of Heterogeneous Workers and Firms"
+    - "Industry Workforce Heterogeneity and Wage Inequality"
+    - "Matching Problem in a Multi-Variate Setting"
 
-work_experience:
-  - role: "Research Assistant"
-    employer: "University of Wisconsin-Madison — for Job Boerma"
-    dates: "July 2022 - July 2023"
-  - role: "Research Assistant"
-    employer: "University of Wisconsin-Madison — for Junjie Guo and Ananth Seshadri"
-    dates: "May 2022 - June 2022"
-  - role: "Research Assistant"
-    employer: "University of Wisconsin-Madison — for Jessica Pac"
-    dates: "January 2022 - May 2022"
-  - role: "Junior Researcher"
-    employer: "Laboratorio Nacional de Políticas Públicas, Data Science Unit, Mexico"
-    dates: "August 2019 - August 2020"
-  - role: "Research Assistant"
-    employer: "Centro de Investigación y Docencia Económicas, Mexico — for Kaniska Dam"
-    dates: "2019"
+- title: Work Experience
+  type: time_table
+  contents:
+    - title: Research Assistant
+      institution: University of Wisconsin-Madison — for Job Boerma
+      year: 2022 - 2023
+    - title: Research Assistant
+      institution: University of Wisconsin-Madison — for Junjie Guo and Ananth Seshadri
+      year: 2022
+    - title: Research Assistant
+      institution: University of Wisconsin-Madison — for Jessica Pac
+      year: 2022
+    - title: Junior Researcher
+      institution: Laboratorio Nacional de Políticas Públicas, Data Science Unit, Mexico
+      year: 2019 - 2020
+    - title: Research Assistant
+      institution: Centro de Investigación y Docencia Económicas, Mexico — for Kaniska Dam
+      year: 2019
 
-teaching_experience:
-  - role: "Teaching Assistant"
-    employer: "University of Wisconsin-Madison"
-    items:
-      - "Data Analytics for Economists — John Brauer (Spring 2025)"
-      - "Financial Microeconomics (MS Level) with Python — Marek Weretka (Fall 2024)"
-      - "Intermediate Macroeconomics — Paolo Martellini (Spring 2023)"
-      - "Data Analytics for Economists — Kim Ruhl (Fall 2023)"
-      - "Principles of Microeconomics — Gregory Pac (Head TA) (Fall 2021)"
-      - "Principles of Microeconomics — Alan Sorensen (Spring 2021)"
-      - "Principles of Microeconomics — Gregory Pac (Fall 2020)"
-  - role: "Teaching Assistant"
-    employer: "Centro de Investigación y Docencia Económicas"
-    items:
-      - "Economics of Information (MS Level) — Kaniska Dam (Fall 2019)"
-      - "Mathematics (MS Level) — Kaniska Dam (Fall 2019)"
-      - "Quantitative Methods for Political Science (MS Level) — Aldo Ponce (Spring 2019)"
-  - role: "External Instructor"
-    employer: "Universidad de la Habana, Cuba"
-    items:
-      - "Ordinary Differential Equations (undergrad) — Fall 2016"
-      - "Integral Calculus (undergrad) — Fall 2016"
+- title: Teaching Experience
+  type: time_table
+  contents:
+    - title: Teaching Assistant
+      institution: University of Wisconsin-Madison
+      year: 2024 - 2025
+      items:
+        - "Data Analytics for Economists — John Brauer (Spring 2025)"
+        - "Financial Microeconomics (MS Level) with Python — Marek Weretka (Fall 2024)"
 
-fellowships:
-  - "University of Wisconsin-Madison Summer Fellowship — Summer 2024"
-  - "CONACYT Excellence Scholarship Program for Postgraduate Studies, Mexico — 2017-2019"
-
-seminars_and_schools:
-  - "Econometric Society Summer School in Dynamic Structural Econometrics — Summer 2024"
-  - "University of Wisconsin-Madison Summer Fellowship Presentation — Summer 2024"
-
-technical_skills:
-  programming:
-    - "Python (Proficient)"
-    - "Julia (Proficient)"
-    - "R (tidyverse)"
-    - "Stata"
-    - "MATLAB (Advanced)"
-    - "SQL"
-    - "C++ (Familiar)"
-  ai_ml:
-    - "PyTorch"
-    - "TensorFlow"
-    - "scikit-learn"
-    - "pandas"
-    - "NumPy"
-    - "Hugging Face Transformers"
-    - "NLP"
-    - "Reinforcement Learning"
-    - "Causal Inference"
-  cloud_data:
-    - "AWS (SageMaker, S3)"
-    - "Google Cloud (Vertex AI)"
-    - "Azure"
-    - "Apache Spark"
-  developer_tools:
-    - "Git"
-    - "Docker"
-    - "Visual Studio Code"
-    - "LaTeX"
-
-languages:
-  - "English (fluent)"
-  - "Spanish (native)"
+- title: References
+  type: list
+  contents:
+    - "Rasmus Lentz — (608) 262-5373 — rlentz@wisc.edu"
+    - "Carter Braxton — (608) 265-2620 — jcbraxton@wisc.edu"
+    - "Kenneth D. West — (608) 262-0033 — kdwest@wisc.edu"
