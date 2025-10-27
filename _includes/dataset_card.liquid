@@ -1,0 +1,114 @@
+<div class="dataset-card row mb-5">
+  <!-- Preview Image - Larger -->
+  <div class="col-sm-5">
+    {% if dataset.preview %}
+      <img src="{{ '/assets/img/data_preview/' | append: dataset.preview | relative_url }}" 
+           class="preview-img img-fluid rounded shadow-sm" 
+           alt="{{ dataset.title }}">
+    {% else %}
+      <div class="preview-placeholder rounded bg-light d-flex align-items-center justify-content-center" 
+           style="height: 300px;">
+        <i class="fas fa-database fa-3x text-muted"></i>
+      </div>
+    {% endif %}
+    
+    {% if dataset.featured %}
+      <div class="badge badge-warning mt-2">Featured</div>
+    {% endif %}
+  </div>
+
+  <!-- Content - Smaller -->
+  <div class="col-sm-7">
+    <h3 class="dataset-title">{{ dataset.title }}</h3>
+    
+    <div class="authors text-muted">
+      {% for author in dataset.authors %}
+        {% if forloop.last and forloop.length > 1 %}and {% endif %}
+        {{ author }}{% unless forloop.last %}, {% endunless %}
+      {% endfor %}
+      <span class="year">({{ dataset.year }})</span>
+    </div>
+    
+    <div class="description mt-3">
+      {{ dataset.description }}
+    </div>
+
+    <!-- Action Buttons - Horizontal Layout -->
+    <div class="action-buttons mt-4">
+      <!-- Downloads -->
+      {% if dataset.downloads %}
+        <div class="downloads mb-3">
+          <strong>Downloads:</strong>
+          <div class="btn-toolbar mt-2" role="toolbar">
+            {% for download in dataset.downloads %}
+              <a href="{{ download.url }}" 
+                 class="btn btn-sm btn-outline-primary mr-2 mb-2" 
+                 download
+                 title="{{ download.description }}">
+                {{ download.label }}
+                {% if download.size %}
+                  <span class="badge badge-light ml-1">{{ download.size }}</span>
+                {% endif %}
+              </a>
+            {% endfor %}
+          </div>
+        </div>
+      {% endif %}
+
+      <!-- Interactive Tools - Side by side -->
+      {% if dataset.interactive %}
+        <div class="interactive mb-3">
+          <strong>Interactive Tools:</strong>
+          <div class="btn-toolbar mt-2" role="toolbar">
+            {% for interactive in dataset.interactive %}
+              <a href="{{ interactive.url }}" 
+                 class="btn btn-sm btn-outline-success mr-2 mb-2" 
+                 target="_blank"
+                 title="{{ interactive.description }}">
+                {{ interactive.label }}
+              </a>
+            {% endfor %}
+          </div>
+        </div>
+      {% endif %}
+
+      <!-- Documentation - Side by side -->
+      {% if dataset.documentation %}
+        <div class="documentation mb-3">
+          <strong>Documentation:</strong>
+          <div class="btn-toolbar mt-2" role="toolbar">
+            {% for doc in dataset.documentation %}
+              <a href="{{ doc.url }}" 
+                 class="btn btn-sm btn-outline-secondary mr-2 mb-2" 
+                 {% if doc.url contains 'http' %}target="_blank"{% endif %}>
+                {{ doc.label }}
+              </a>
+            {% endfor %}
+          </div>
+        </div>
+      {% endif %}
+    </div>
+
+    <!-- Tags -->
+    {% if dataset.tags %}
+      <div class="tags mt-3">
+        {% for tag in dataset.tags %}
+          <span class="badge badge-pill badge-light">{{ tag }}</span>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    <!-- Link to Paper -->
+    {% if dataset.paper %}
+      <div class="paper-link mt-3">
+        <small class="text-muted">
+          Related paper: 
+          <a href="{{ '/publications/#' | append: dataset.paper | relative_url }}">
+            View publication →
+          </a>
+        </small>
+      </div>
+    {% endif %}
+  </div>
+</div>
+<hr class="my-4">
