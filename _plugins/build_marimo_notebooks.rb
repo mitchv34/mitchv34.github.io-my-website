@@ -2,6 +2,11 @@
 # Place in _plugins/build_marimo_notebooks.rb
 
 def should_rebuild_notebooks?
+  # Skip rebuild in CI if marimo_site already exists (built in previous step)
+  if ENV['CI'] && Dir.exist?("marimo_site") && !Dir.glob("marimo_site/**/*.html").empty?
+    return false
+  end
+  
   # Check if source notebooks are newer than built HTML files
   source_notebooks = Dir.glob("notebooks/**/*.py") + Dir.glob("projects/**/notebooks/**/*.py")
   return true if source_notebooks.empty? # No notebooks found, skip rebuild

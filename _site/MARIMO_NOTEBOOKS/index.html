@@ -17,7 +17,7 @@
   
   
     
-      2015 | Mitchell Valdes-Bobes
+      Marimo Notebooks Integration | Mitchell Valdes-Bobes
     
   
 </title>
@@ -64,7 +64,7 @@
   <link rel="shortcut icon" href="/assets/img/creative-thinking.ico?ef746eb9b233aadbaea0ce34e1da6237">
 
 <link rel="stylesheet" href="/assets/css/main.css?d41d8cd98f00b204e9800998ecf8427e">
-<link rel="canonical" href="http://localhost:4003/blog/2015/">
+<link rel="canonical" href="http://localhost:4003/MARIMO_NOTEBOOKS/">
 
 <!-- Dark Mode -->
 <script src="/assets/js/theme.js?a81d82887dd692e91686b43de4542f18"></script>
@@ -323,67 +323,195 @@
     <!-- Content -->
     <div class="container mt-5" role="main">
       
-        <div class="post">
+        
+
+<div class="post">
   <header class="post-header">
-    
-      <h1 class="post-title">
-<i class="fa-solid fa-calendar fa-sm"></i> 2015</h1>
-      <p class="post-description">an archive of posts from this year</p>
-    
+    <h1 class="post-title">Marimo Notebooks Integration</h1>
+    <p class="post-description"></p>
   </header>
 
-  <article class="archive">
-    <div class="table-responsive">
-      <table class="table table-sm table-borderless">
-        
-          <tr>
-            <th scope="row">Oct 20, 2015</th>
-            <td>
-              
-                <a class="post-link" href="/blog/2015/disqus-comments/">a post with disqus comments</a>
-              
-            </td>
-          </tr>
-        
-          <tr>
-            <th scope="row">Oct 20, 2015</th>
-            <td>
-              
-                <a class="post-link" href="/blog/2015/math/">a post with math</a>
-              
-            </td>
-          </tr>
-        
-          <tr>
-            <th scope="row">Jul 15, 2015</th>
-            <td>
-              
-                <a class="post-link" href="/blog/2015/code/">a post with code</a>
-              
-            </td>
-          </tr>
-        
-          <tr>
-            <th scope="row">May 15, 2015</th>
-            <td>
-              
-                <a class="post-link" href="/blog/2015/images/">a post with images</a>
-              
-            </td>
-          </tr>
-        
-          <tr>
-            <th scope="row">Mar 15, 2015</th>
-            <td>
-              
-                <a class="post-link" href="/blog/2015/formatting-and-links/">a post with formatting and links</a>
-              
-            </td>
-          </tr>
-        
-      </table>
-    </div>
+  <article>
+    <h1 id="marimo-notebooks-integration">Marimo Notebooks Integration</h1>
+
+<p>This site includes interactive marimo notebooks that run in the browser using WebAssembly (WASM).</p>
+
+<h2 id="automatic-building">Automatic Building</h2>
+
+<p>Marimo notebooks are <strong>automatically built</strong> when you start the development server:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Using bundle exec (native)</span>
+bundle <span class="nb">exec </span>jekyll serve
+
+<span class="c"># Using Docker</span>
+docker compose up
+</code></pre></div></div>
+
+<p>The build system will:</p>
+<ol>
+  <li>Check if source notebooks are newer than built HTML files</li>
+  <li>Build notebooks only if changes are detected</li>
+  <li>Copy notebooks and their data dependencies to <code class="language-plaintext highlighter-rouge">_site/</code>
+</li>
+</ol>
+
+<h2 id="manual-building">Manual Building</h2>
+
+<p>To manually rebuild notebooks:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python build_notebooks.py
+</code></pre></div></div>
+
+<h2 id="directory-structure">Directory Structure</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>notebooks/                    # Root-level notebooks
+projects/
+  └── project-name/
+      ├── notebooks/         # Project-specific notebooks (auto-discovered)
+      ├── data/              # Data files (auto-copied for WASM access)
+      └── results/           # Results files (auto-copied for WASM access)
+marimo_site/                 # Build output (gitignored)
+_site/
+  ├── marimo.html           # Notebook index page
+  ├── notebooks/            # Root notebooks + assets
+  └── projects/             # Project notebooks + data + results
+</code></pre></div></div>
+
+<h2 id="adding-new-notebooks">Adding New Notebooks</h2>
+
+<ol>
+  <li>
+<strong>Create a marimo notebook:</strong>
+    <div class="language-bash highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>marimo edit notebooks/my_notebook.py
+<span class="c"># or for projects:</span>
+marimo edit projects/my-project/notebooks/my_notebook.py
+</code></pre></div>    </div>
+  </li>
+  <li>
+<strong>For notebooks that load data files:</strong>
+    <ul>
+      <li>Store data in <code class="language-plaintext highlighter-rouge">projects/my-project/data/</code> or <code class="language-plaintext highlighter-rouge">results/</code>
+</li>
+      <li>Use WASM-compatible data loading (see example below)</li>
+    </ul>
+  </li>
+  <li>
+<strong>Rebuild and test:</strong>
+    <div class="language-bash highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>python build_notebooks.py
+bundle <span class="nb">exec </span>jekyll serve
+<span class="c"># Open http://localhost:4000/marimo.html</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h2 id="wasm-compatible-data-loading">WASM-Compatible Data Loading</h2>
+
+<p>When notebooks run in the browser, they need to fetch data via HTTP. Use this pattern:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">sys</span>
+<span class="kn">from</span> <span class="n">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+
+<span class="c1"># Detect if running in WASM (Pyodide)
+</span><span class="n">is_wasm</span> <span class="o">=</span> <span class="n">sys</span><span class="p">.</span><span class="n">platform</span> <span class="o">==</span> <span class="sh">"</span><span class="s">emscripten</span><span class="sh">"</span>
+
+<span class="k">if</span> <span class="n">is_wasm</span><span class="p">:</span>
+    <span class="c1"># In WASM, use relative URLs from notebook location
+</span>    <span class="n">data_path</span> <span class="o">=</span> <span class="sh">"</span><span class="s">../data/my_data.csv</span><span class="sh">"</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="c1"># Local execution: use file paths
+</span>    <span class="n">data_path</span> <span class="o">=</span> <span class="nc">Path</span><span class="p">(</span><span class="n">__file__</span><span class="p">).</span><span class="n">parent</span><span class="p">.</span><span class="n">parent</span> <span class="o">/</span> <span class="sh">"</span><span class="s">data</span><span class="sh">"</span> <span class="o">/</span> <span class="sh">"</span><span class="s">my_data.csv</span><span class="sh">"</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span><span class="n">data_path</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="build-process-details">Build Process Details</h2>
+
+<h3 id="jekyll-plugin-_pluginsbuild_marimo_notebooksrb">Jekyll Plugin (<code class="language-plaintext highlighter-rouge">_plugins/build_marimo_notebooks.rb</code>)</h3>
+<ul>
+  <li>Runs on Jekyll startup (<code class="language-plaintext highlighter-rouge">:after_init</code> hook)</li>
+  <li>Checks file modification times</li>
+  <li>Rebuilds only if source notebooks are newer than built HTML</li>
+</ul>
+
+<h3 id="build-script-build_notebookspy">Build Script (<code class="language-plaintext highlighter-rouge">build_notebooks.py</code>)</h3>
+<ul>
+  <li>Exports notebooks to HTML with WASM runtime</li>
+  <li>Copies data/results directories for each project</li>
+  <li>Generates index page at <code class="language-plaintext highlighter-rouge">marimo_site/index.html</code>
+</li>
+</ul>
+
+<h3 id="copy-script-copy_notebookssh">Copy Script (<code class="language-plaintext highlighter-rouge">copy_notebooks.sh</code>)</h3>
+<ul>
+  <li>Runs after Jekyll build (<code class="language-plaintext highlighter-rouge">:post_write</code> hook)</li>
+  <li>Copies <code class="language-plaintext highlighter-rouge">marimo_site/</code> contents to <code class="language-plaintext highlighter-rouge">_site/</code>
+</li>
+  <li>Preserves directory structure for correct relative paths</li>
+</ul>
+
+<h2 id="deployment">Deployment</h2>
+
+<p>GitHub Actions automatically:</p>
+<ol>
+  <li>Installs Python dependencies (including marimo)</li>
+  <li>Builds notebooks before Jekyll build</li>
+  <li>Copies notebooks to <code class="language-plaintext highlighter-rouge">_site/</code> after Jekyll build</li>
+  <li>Deploys to GitHub Pages</li>
+</ol>
+
+<p>See <code class="language-plaintext highlighter-rouge">.github/workflows/deploy.yml</code> for details.</p>
+
+<h2 id="troubleshooting">Troubleshooting</h2>
+
+<h3 id="notebooks-not-showing-figurestables">Notebooks not showing figures/tables</h3>
+<ul>
+  <li>
+<strong>Cause:</strong> Data files not accessible or wrong path</li>
+  <li>
+<strong>Fix:</strong> Check that data files are in <code class="language-plaintext highlighter-rouge">results/</code> or <code class="language-plaintext highlighter-rouge">data/</code> directories and use WASM-compatible loading pattern</li>
+</ul>
+
+<h3 id="filenotfounderror-in-browser-console">“FileNotFoundError” in browser console</h3>
+<ul>
+  <li>
+<strong>Cause:</strong> Data file path is incorrect for WASM environment</li>
+  <li>
+<strong>Fix:</strong> Use relative URLs (e.g., <code class="language-plaintext highlighter-rouge">"../data/file.csv"</code>) when <code class="language-plaintext highlighter-rouge">sys.platform == "emscripten"</code>
+</li>
+</ul>
+
+<h3 id="notebooks-not-rebuilding-on-changes">Notebooks not rebuilding on changes</h3>
+<ul>
+  <li>
+<strong>Cause:</strong> Modification times not updated</li>
+  <li>
+<strong>Fix:</strong> Force rebuild with <code class="language-plaintext highlighter-rouge">python build_notebooks.py</code> or <code class="language-plaintext highlighter-rouge">touch</code> the notebook file</li>
+</ul>
+
+<h3 id="jekyll-not-finding-plugin">Jekyll not finding plugin</h3>
+<ul>
+  <li>
+<strong>Cause:</strong> Plugin not in <code class="language-plaintext highlighter-rouge">_plugins/</code> directory</li>
+  <li>
+<strong>Fix:</strong> Ensure <code class="language-plaintext highlighter-rouge">_plugins/build_marimo_notebooks.rb</code> exists and is executable</li>
+</ul>
+
+<h2 id="resources">Resources</h2>
+
+<ul>
+  <li><a href="https://docs.marimo.io/" rel="external nofollow noopener" target="_blank">Marimo Documentation</a></li>
+  <li><a href="https://docs.marimo.io/guides/exporting.html#webassembly-wasm" rel="external nofollow noopener" target="_blank">Marimo WASM Export</a></li>
+  <li>
+<a href="https://pyodide.org/" rel="external nofollow noopener" target="_blank">Pyodide</a> - Python runtime in the browser</li>
+</ul>
+
   </article>
+
+  
+
+  
 </div>
 
       

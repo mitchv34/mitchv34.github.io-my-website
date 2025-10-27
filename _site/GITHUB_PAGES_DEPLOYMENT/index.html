@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Head -->
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <!-- Metadata, OpenGraph and Schema.org -->
+
+
+
+
+<!-- Standard metadata -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>
+  
+  
+    
+      GitHub Pages Deployment Strategy | Mitchell Valdes-Bobes
+    
+  
+</title>
+<meta name="author" content="Mitchell Valdes-Bobes">
+<meta name="description" content="Academic website of Mitchell Valdes-Bobes - PhD Candidate in Economics at the University of Wisconsin–Madison.
+">
+
+  <meta name="keywords" content="Mitchell Valdes-Bobes, academic, research, PhD, publications, economics, labor economics, macroeconomics, University of Wisconsin–Madison">
+
+
+
+
+
+
+
+
+
+
+<!-- Bootstrap & MDB -->
+<link rel="stylesheet" href="/assets/css/bootstrap.min.css?a4b3f509e79c54a512b890d73235ef04">
+<link rel="stylesheet" href="" integrity="" crossorigin="anonymous">
+
+
+
+<!-- Fonts & Icons -->
+<link defer rel="stylesheet" href="/assets/css/academicons.min.css?f0b7046b84e425c55f3463ac249818f5">
+<link defer rel="stylesheet" href="/assets/css/scholar-icons.css?62b2ac103a88034e6882a5be5f3e2772">
+<!-- Font Awesome CDN fallback -->
+<link defer rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous">
+<!-- Academicons CDN fallback -->
+<link defer rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css" integrity="sha512-IW0nhlW5MgNydsXJO40En2EoCkTTjZhI3yuODrZIc8cQ4h1XcF53PsqDHa09NqnkXuIe0Oiyyj171BqZFwISBw==" crossorigin="anonymous">
+<link defer rel="stylesheet" type="text/css" href="">
+
+<!-- Code Syntax Highlighting -->
+<link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light">
+
+
+
+<!-- Styles -->
+
+
+
+
+  <link rel="shortcut icon" href="/assets/img/creative-thinking.ico?ef746eb9b233aadbaea0ce34e1da6237">
+
+<link rel="stylesheet" href="/assets/css/main.css?d41d8cd98f00b204e9800998ecf8427e">
+<link rel="canonical" href="http://localhost:4003/GITHUB_PAGES_DEPLOYMENT/">
+
+<!-- Dark Mode -->
+<script src="/assets/js/theme.js?a81d82887dd692e91686b43de4542f18"></script>
+
+  <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark">
+  <script>
+    initTheme();
+  </script>
+
+
+
+
+
+
+
+
+
+
+  </head>
+
+  <!-- Body -->
+  <body class="fixed-top-nav ">
+    <!-- Header -->
+    <header>
+  <!-- Nav Bar -->
+  <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation">
+    <div class="container">
+      
+        <a class="navbar-brand title font-weight-lighter" href="/">
+          Mitchell Valdes-Bobes
+        </a>
+      
+      <!-- Navbar Toggle -->
+      <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar top-bar"></span>
+        <span class="icon-bar middle-bar"></span>
+        <span class="icon-bar bottom-bar"></span>
+      </button>
+
+      <div class="collapse navbar-collapse text-right" id="navbarNav">
+        <ul class="navbar-nav ml-auto flex-nowrap">
+          
+
+          <!-- About -->
+          <li class="nav-item ">
+            <a class="nav-link" href="/">About
+              
+            </a>
+          </li>
+
+          <!-- Other pages -->
+          
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              
+                
+                <li class="nav-item ">
+                  <a class="nav-link" href="/publications/">Research
+                    
+                  </a>
+                </li>
+              
+            
+          
+            
+              
+                
+                <li class="nav-item ">
+                  <a class="nav-link" href="/cv/">CV
+                    
+                  </a>
+                </li>
+              
+            
+          
+            
+          
+            
+              
+                
+                <li class="nav-item ">
+                  <a class="nav-link" href="/repositories/">Repositories
+                    
+                  </a>
+                </li>
+              
+            
+          
+            
+          
+            
+              
+                
+                <li class="nav-item ">
+                  <a class="nav-link" href="/data/">Data &amp; Code
+                    
+                  </a>
+                </li>
+              
+            
+          
+            
+          
+            
+          
+          
+          
+            <!-- Toggle theme mode -->
+            <li class="toggle-container">
+              <button id="light-toggle" title="Change theme">
+                <i class="fa-solid fa-moon"></i>
+                <i class="fa-solid fa-sun"></i>
+              </button>
+            </li>
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+    <!-- Scrolling Progress Bar -->
+    <progress id="progress" value="0">
+      <div class="progress-container">
+        <span class="progress-bar"></span>
+      </div>
+    </progress>
+  
+</header>
+
+
+    <!-- Content -->
+    <div class="container mt-5" role="main">
+      
+        
+
+<div class="post">
+  <header class="post-header">
+    <h1 class="post-title">GitHub Pages Deployment Strategy</h1>
+    <p class="post-description"></p>
+  </header>
+
+  <article>
+    <h1 id="github-pages-deployment-strategy">GitHub Pages Deployment Strategy</h1>
+
+<h2 id="overview">Overview</h2>
+
+<p>This site uses <strong>GitHub Actions</strong> to build and deploy to GitHub Pages, which allows:</p>
+<ul>
+  <li>✅ Custom Jekyll plugins (jekyll-scholar, custom hooks)</li>
+  <li>✅ Python/marimo notebook building</li>
+  <li>✅ Full control over build process</li>
+</ul>
+
+<h2 id="why-not-standard-github-pages">Why Not Standard GitHub Pages?</h2>
+
+<p>Standard GitHub Pages (push to <code class="language-plaintext highlighter-rouge">gh-pages</code> branch) only supports <a href="https://pages.github.com/versions/" rel="external nofollow noopener" target="_blank">a limited set of plugins</a>. This site requires:</p>
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">jekyll-scholar</code> for bibliography</li>
+  <li>Custom plugins for notebook building, cache busting, etc.</li>
+</ul>
+
+<h2 id="deployment-flow">Deployment Flow</h2>
+
+<pre><code class="language-mermaid">graph TD
+    A[Push to main] --&gt; B[GitHub Actions Triggered]
+    B --&gt; C[Install Ruby/Python Dependencies]
+    C --&gt; D[Build Marimo Notebooks]
+    D --&gt; E[Bundle exec jekyll build]
+    E --&gt; F[Jekyll Plugin Copies Notebooks]
+    F --&gt; G[Deploy _site to GitHub Pages]
+</code></pre>
+
+<h3 id="step-by-step">Step-by-Step:</h3>
+
+<ol>
+  <li>
+    <p><strong>Trigger</strong> - Push to <code class="language-plaintext highlighter-rouge">main</code> branch or manual workflow dispatch</p>
+  </li>
+  <li>
+<strong>Setup</strong> (<code class="language-plaintext highlighter-rouge">.github/workflows/deploy.yml</code>):
+    <ul>
+      <li>Checkout code</li>
+      <li>Setup Ruby, Python, Node.js</li>
+      <li>Install dependencies from <code class="language-plaintext highlighter-rouge">Gemfile</code>, <code class="language-plaintext highlighter-rouge">requirements.txt</code>, <code class="language-plaintext highlighter-rouge">package.json</code>
+</li>
+    </ul>
+  </li>
+  <li>
+<strong>Build Marimo Notebooks</strong> (Manual step):
+    <div class="language-bash highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>python build_notebooks.py
+</code></pre></div>    </div>
+    <ul>
+      <li>Exports <code class="language-plaintext highlighter-rouge">.py</code> notebooks to <code class="language-plaintext highlighter-rouge">.html</code> with WASM runtime</li>
+      <li>Copies <code class="language-plaintext highlighter-rouge">data/</code> and <code class="language-plaintext highlighter-rouge">results/</code> directories</li>
+      <li>Outputs to <code class="language-plaintext highlighter-rouge">marimo_site/</code>
+</li>
+    </ul>
+  </li>
+  <li>
+<strong>Build Jekyll Site</strong>:
+    <div class="language-bash highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>bundle <span class="nb">exec </span>jekyll build <span class="nt">--baseurl</span> <span class="s2">"</span><span class="nv">$BASE_PATH</span><span class="s2">"</span>
+</code></pre></div>    </div>
+    <ul>
+      <li>Runs custom plugins (including <code class="language-plaintext highlighter-rouge">_plugins/build_marimo_notebooks.rb</code>)</li>
+      <li>Plugin detects notebooks already built in step 3 (via CI check)</li>
+      <li>Plugin’s <code class="language-plaintext highlighter-rouge">:post_write</code> hook copies <code class="language-plaintext highlighter-rouge">marimo_site/</code> to <code class="language-plaintext highlighter-rouge">_site/</code>
+</li>
+      <li>Outputs to <code class="language-plaintext highlighter-rouge">_site/</code>
+</li>
+    </ul>
+  </li>
+  <li>
+<strong>Deploy to GitHub Pages</strong>:
+    <ul>
+      <li>Uses <code class="language-plaintext highlighter-rouge">actions/upload-pages-artifact@v3</code>
+</li>
+      <li>Deploys <code class="language-plaintext highlighter-rouge">_site/</code> directory</li>
+      <li>Site available at <code class="language-plaintext highlighter-rouge">https://mitchv34.github.io/</code>
+</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="plugin-behavior">Plugin Behavior</h2>
+
+<h3 id="in-github-actions-citrue">In GitHub Actions (CI=true):</h3>
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">:after_init</code> hook: Skips rebuild if <code class="language-plaintext highlighter-rouge">marimo_site/</code> exists (already built in step 3)</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">:post_write</code> hook: Copies <code class="language-plaintext highlighter-rouge">marimo_site/</code> to <code class="language-plaintext highlighter-rouge">_site/</code>
+</li>
+</ul>
+
+<h3 id="in-local-development">In Local Development:</h3>
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">:after_init</code> hook: Checks file modification times, rebuilds if needed</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">:post_write</code> hook: Copies <code class="language-plaintext highlighter-rouge">marimo_site/</code> to <code class="language-plaintext highlighter-rouge">_site/</code>
+</li>
+</ul>
+
+<h2 id="key-files">Key Files</h2>
+
+<h3 id="githubworkflowsdeployyml"><code class="language-plaintext highlighter-rouge">.github/workflows/deploy.yml</code></h3>
+<p>Main deployment workflow. Key sections:</p>
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">Build marimo notebooks</code> - Runs <code class="language-plaintext highlighter-rouge">build_notebooks.py</code>
+</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">Build with Jekyll</code> - Runs <code class="language-plaintext highlighter-rouge">bundle exec jekyll build</code>
+</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">Verify marimo notebooks in _site</code> - Checks notebooks were copied</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">Deploy to GitHub Pages</code> - Uploads and deploys</li>
+</ul>
+
+<h3 id="_pluginsbuild_marimo_notebooksrb"><code class="language-plaintext highlighter-rouge">_plugins/build_marimo_notebooks.rb</code></h3>
+<p>Jekyll plugin that:</p>
+<ul>
+  <li>Builds notebooks on <code class="language-plaintext highlighter-rouge">:after_init</code> (if needed)</li>
+  <li>Copies notebooks on <code class="language-plaintext highlighter-rouge">:post_write</code>
+</li>
+  <li>CI-aware: skips rebuild in GitHub Actions if already built</li>
+</ul>
+
+<h3 id="build_notebookspy"><code class="language-plaintext highlighter-rouge">build_notebooks.py</code></h3>
+<p>Python script that:</p>
+<ul>
+  <li>Exports marimo notebooks to HTML with WASM</li>
+  <li>Copies data/results directories</li>
+  <li>Generates index page</li>
+</ul>
+
+<h3 id="copy_notebookssh"><code class="language-plaintext highlighter-rouge">copy_notebooks.sh</code></h3>
+<p>Shell script that copies <code class="language-plaintext highlighter-rouge">marimo_site/</code> contents to <code class="language-plaintext highlighter-rouge">_site/</code></p>
+
+<h2 id="verification">Verification</h2>
+
+<p>After deployment, the workflow verifies:</p>
+<ul>
+  <li>✅ <code class="language-plaintext highlighter-rouge">_site/marimo.html</code> exists</li>
+  <li>✅ Notebook HTML files present in <code class="language-plaintext highlighter-rouge">_site/</code>
+</li>
+  <li>✅ Data files accessible (for WASM notebooks)</li>
+</ul>
+
+<p>Check workflow logs for verification output.</p>
+
+<h2 id="github-pages-settings">GitHub Pages Settings</h2>
+
+<p>Required repository settings:</p>
+<ul>
+  <li>
+<strong>Source</strong>: GitHub Actions (not Deploy from a branch)</li>
+  <li>
+<strong>Branch</strong>: Actions deploy from <code class="language-plaintext highlighter-rouge">main</code>
+</li>
+  <li>
+<strong>Environment</strong>: <code class="language-plaintext highlighter-rouge">github-pages</code>
+</li>
+</ul>
+
+<p>To verify: Settings → Pages → Build and deployment → Source: <strong>GitHub Actions</strong></p>
+
+<h2 id="troubleshooting">Troubleshooting</h2>
+
+<h3 id="notebooks-not-appearing-on-deployed-site">Notebooks not appearing on deployed site</h3>
+<ol>
+  <li>Check workflow logs for build errors</li>
+  <li>Verify <code class="language-plaintext highlighter-rouge">Build marimo notebooks</code> step succeeded</li>
+  <li>Check <code class="language-plaintext highlighter-rouge">Verify marimo notebooks in _site</code> step output</li>
+</ol>
+
+<h3 id="plugin-errors-in-github-actions">Plugin errors in GitHub Actions</h3>
+<ul>
+  <li>Ensure <code class="language-plaintext highlighter-rouge">Gemfile</code> includes all required gems</li>
+  <li>Check Ruby version matches workflow (<code class="language-plaintext highlighter-rouge">ruby: 3.3</code>)</li>
+  <li>Verify plugin is in <code class="language-plaintext highlighter-rouge">_plugins/</code> directory</li>
+</ul>
+
+<h3 id="data-files-not-loading-in-notebooks">Data files not loading in notebooks</h3>
+<ul>
+  <li>Ensure files are in <code class="language-plaintext highlighter-rouge">projects/*/data/</code> or <code class="language-plaintext highlighter-rouge">projects/*/results/</code>
+</li>
+  <li>Check <code class="language-plaintext highlighter-rouge">build_notebooks.py</code> copied directories</li>
+  <li>Verify WASM-compatible loading pattern in notebook code</li>
+</ul>
+
+<h2 id="local-testing">Local Testing</h2>
+
+<p>Test the exact same build process locally:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Clean build</span>
+<span class="nb">rm</span> <span class="nt">-rf</span> _site marimo_site .jekyll-cache
+
+<span class="c"># Build notebooks</span>
+python build_notebooks.py
+
+<span class="c"># Build Jekyll site</span>
+<span class="nv">JEKYLL_ENV</span><span class="o">=</span>production bundle <span class="nb">exec </span>jekyll build
+
+<span class="c"># Verify notebooks copied</span>
+<span class="nb">ls</span> <span class="nt">-la</span> _site/marimo.html
+find _site/projects <span class="nt">-name</span> <span class="s2">"*.html"</span> | <span class="nb">grep </span>notebooks
+</code></pre></div></div>
+
+<h2 id="security">Security</h2>
+
+<ul>
+  <li>✅ No secrets exposed (uses GitHub tokens automatically)</li>
+  <li>✅ No server-side execution (static HTML + WASM)</li>
+  <li>✅ Data files served as static assets</li>
+  <li>✅ All builds in isolated GitHub Actions runners</li>
+</ul>
+
+<h2 id="resources">Resources</h2>
+
+<ul>
+  <li><a href="https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site#publishing-with-a-custom-github-actions-workflow" rel="external nofollow noopener" target="_blank">GitHub Pages with GitHub Actions</a></li>
+  <li><a href="https://jekyllrb.com/docs/plugins/" rel="external nofollow noopener" target="_blank">Jekyll Plugins on GitHub Pages</a></li>
+  <li><a href="https://docs.marimo.io/guides/exporting.html#webassembly-wasm" rel="external nofollow noopener" target="_blank">Marimo WASM Export</a></li>
+</ul>
+
+  </article>
+
+  
+
+  
+</div>
+
+      
+    </div>
+
+    <!-- Footer -->
+    
+
+
+  <footer class="fixed-bottom" role="contentinfo">
+    <div class="container mt-0">
+      
+  © Copyright 2025
+  Mitchell
+  
+  Valdes-Bobes. 
+  
+  
+
+    </div>
+  </footer>
+
+
+
+    <!-- JavaScripts -->
+    <!-- jQuery -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+<!-- Bootsrap & MDB scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+
+
+  <!-- Masonry & imagesLoaded -->
+  <script defer src="" integrity="" crossorigin="anonymous"></script>
+  <script defer src="" integrity="" crossorigin="anonymous"></script>
+  <script defer src="/assets/js/masonry.js?a0db7e5d5c70cc3252b3138b0c91dcaf" type="text/javascript"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Medium Zoom JS -->
+  <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js" integrity="sha256-ZgMyRlgDG2N2jN24LYdG2q2L+NHPZUIh8RzS32L3qgI=" crossorigin="anonymous"></script>
+  <script defer src="/assets/js/zoom.js?85ddb88934d28b74e78031fd54cf8308"></script>
+
+
+
+
+
+
+<!-- Load Common JS -->
+<script src="/assets/js/no_defer.js?2781658a0a2b13ed609542042a859126"></script>
+<script defer src="/assets/js/common.js?f0f0a49ec11608001f763cd25ca94889"></script>
+<script defer src="/assets/js/copy_code.js?c8a01c11a92744d44b093fc3bda915df" type="text/javascript"></script>
+
+<!-- Jupyter Open External Links New Tab -->
+<script defer src="/assets/js/jupyter_new_tab.js?d9f17b6adc2311cbabd747f4538bb15f"></script>
+
+<!-- Badges -->
+
+  <script async src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script>
+
+
+  <script async src="https://badge.dimensions.ai/badge.js"></script>
+
+
+
+  <!-- MathJax -->
+  <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha256-1XBYE1XDRGBCR9Rht2Uo5x2BDM9LzW3L5L2Ml+Qn22M=" crossorigin="anonymous"></script>
+  
+    <script src="/assets/js/mathjax-setup.js?a5bb4e6a542c546dd929b24b8b236dfd"></script>
+    <script defer src="" crossorigin="anonymous"></script>
+  
+
+
+
+
+
+
+
+
+
+  <!-- Scrolling Progress Bar -->
+  <script defer src="/assets/js/progress-bar.js?2f30e0e6801ea8f5036fa66e1ab0a71a" type="text/javascript"></script>
+
+
+
+
+
+
+
+  <!-- Back to Top -->
+  <script src="/assets/js/vanilla-back-to-top.min.js?f40d453793ff4f64e238e420181a1d17"></script>
+  <script>
+    addBackToTop();
+  </script>
+
+
+
+
+
+
+  </body>
+</html>
