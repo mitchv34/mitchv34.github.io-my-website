@@ -43,7 +43,20 @@ jobs:
           
       - name: Build marimo notebooks
         run: |
+          echo "🔧 Building marimo notebooks..."
           python build_notebooks.py
+          
+          # Verify build output
+          if [ ! -d "marimo_site" ]; then
+            echo "❌ ERROR: marimo_site directory not created"
+            exit 1
+          fi
+          
+          # Count notebooks
+          NOTEBOOK_COUNT=$(find marimo_site -name "*.html" -type f | wc -l)
+          echo "✅ Built $NOTEBOOK_COUNT notebook HTML files"
+          
+          # Make copy script executable
           chmod +x copy_notebooks.sh
 
       - name: Install system dependencies
@@ -58,9 +71,31 @@ jobs:
       - name: Build with Jekyll
         run: |
           bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
-          ./copy_notebooks.sh
         env:
           JEKYLL_ENV: production
+          
+      - name: Verify marimo notebooks in _site
+        run: |
+          echo "📦 Verifying marimo notebooks..."
+          
+          # Check marimo index
+          if [ ! -f "_site/marimo.html" ]; then
+            echo "⚠️ WARNING: _site/marimo.html not found"
+          else
+            echo "✓ Found marimo index at _site/marimo.html"
+          fi
+          
+          # Check notebook files
+          NOTEBOOK_COUNT=$(find _site -path "*notebooks*.html" -type f | wc -l)
+          if [ "$NOTEBOOK_COUNT" -eq 0 ]; then
+            echo "⚠️ WARNING: No notebook HTML files found in _site"
+          else
+            echo "✓ Found $NOTEBOOK_COUNT notebook(s) in _site"
+          fi
+          
+          # List all notebook locations for debugging
+          echo "Notebook locations:"
+          find _site -path "*notebooks*.html" -type f | head -10
           
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
