@@ -8,6 +8,7 @@ import subprocess
 from pathlib import Path
 from typing import List
 import jinja2
+import shutil
 
 
 def export_notebook(notebook_path: Path, output_dir: Path, as_app: bool = False) -> bool:
@@ -76,6 +77,26 @@ def generate_index(output_dir: Path, template_file: Path, notebooks_data: List[d
     print(f"✓ Generated {index_path}")
 
 
+def copy_project_data(project_dir: Path, output_dir: Path):
+    """Copy data and results directories for a project to output."""
+    project_name = project_dir.name
+    project_output = output_dir / "projects" / project_name
+    
+    # Copy results directory if it exists
+    results_dir = project_dir / "results"
+    if results_dir.exists():
+        dest_results = project_output / "results"
+        print(f"Copying {results_dir} to {dest_results}")
+        shutil.copytree(results_dir, dest_results, dirs_exist_ok=True)
+    
+    # Copy data directory if it exists
+    data_dir = project_dir / "data"
+    if data_dir.exists():
+        dest_data = project_output / "data"
+        print(f"Copying {data_dir} to {dest_data}")
+        shutil.copytree(data_dir, dest_data, dirs_exist_ok=True)
+
+
 def main():
     """Main build function."""
     print("=" * 60)
@@ -99,6 +120,8 @@ def main():
                 # Export as apps (run mode, no code visible)
                 project_notebooks = export_folder(project_dir / "notebooks", output_dir, as_app=True)
                 notebooks_data.extend(project_notebooks)
+                # Copy data and results directories
+                copy_project_data(project_dir, output_dir)
     
     # Generate index
     template_file = Path("templates/index.html.j2")
