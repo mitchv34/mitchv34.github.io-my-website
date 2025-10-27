@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Notebooks - Mitchell Valdes-Bobes</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 2rem;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            padding: 3rem;
+        }
+        
+        h1 {
+            color: #667eea;
+            margin-bottom: 0.5rem;
+            font-size: 2.5rem;
+        }
+        
+        .subtitle {
+            color: #666;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+        
+        .section {
+            margin-bottom: 3rem;
+        }
+        
+        .section h2 {
+            color: #333;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .notebooks-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .notebook-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .notebook-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+            border-color: #667eea;
+        }
+        
+        .notebook-card h3 {
+            color: #667eea;
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+        
+        .notebook-card .type {
+            font-size: 0.85rem;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+        
+        .app-badge {
+            background: #764ba2;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            display: inline-block;
+            margin-top: 0.5rem;
+        }
+        
+        .notebook-badge {
+            background: #667eea;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            display: inline-block;
+            margin-top: 0.5rem;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #eee;
+            color: #666;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        
+        .empty-state {
+            text-align: center;
+            padding: 3rem;
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/" class="back-link">← Back to Main Site</a>
+        
+        <h1>Interactive Notebooks</h1>
+        <p class="subtitle">Explore interactive economics models and data analysis powered by marimo</p>
+        
+        {% if notebooks %}
+        <div class="section">
+            <h2>📓 Notebooks (Editable)</h2>
+            <div class="notebooks-grid">
+                {% for notebook in notebooks %}
+                <a href="{{ notebook.html_path }}" class="notebook-card">
+                    <h3>{{ notebook.display_name }}</h3>
+                    <span class="notebook-badge">Interactive Notebook</span>
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+        
+        {% if apps %}
+        <div class="section">
+            <h2>🚀 Applications (Run Mode)</h2>
+            <div class="notebooks-grid">
+                {% for app in apps %}
+                <a href="{{ app.html_path }}" class="notebook-card">
+                    <h3>{{ app.display_name }}</h3>
+                    <span class="app-badge">Interactive App</span>
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+        
+        {% if not notebooks and not apps %}
+        <div class="empty-state">
+            <p>No notebooks or apps available yet.</p>
+        </div>
+        {% endif %}
+        
+        <footer>
+            <p>Powered by <a href="https://marimo.io" target="_blank" style="color: #667eea;">marimo</a> + WebAssembly</p>
+            <p style="margin-top: 0.5rem;">© 2025 Mitchell Valdes-Bobes</p>
+        </footer>
+    </div>
+</body>
+</html>
