@@ -1,0 +1,3 @@
+[submodule "projects/teleworkability-index"]
+	path = projects/teleworkability-index
+	url = https://github.com/mitchv34/teleworkability-index.git

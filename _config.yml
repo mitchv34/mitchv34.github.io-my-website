@@ -48,7 +48,7 @@ rss_icon: false
 
 navbar_fixed: true
 footer_fixed: true
-search_enabled: true
+search_enabled: false
 socials_in_search: true
 posts_in_search: true
 bib_search: true
@@ -170,7 +170,7 @@ kramdown:
       start_line: 1
 
 # Includes & excludes
-include: ["_pages", "_scripts", "assets"]
+include: ["_pages", "_scripts"]
 exclude:
   - bin/
   - CONTRIBUTING.md
@@ -191,6 +191,15 @@ exclude:
   - README.md
   - readme_preview/
   - vendor
+  - assets/notebooks/
+  - notebooks/
+  - apps/
+  - marimo_site/
+  - templates/
+  - projects/
+  - projects/**/*.py
+  - projects/**/data/
+  - projects/**/results/
 keep_files:
   - CNAME
   - .nojekyll
@@ -202,7 +211,6 @@ plugins:
   - jekyll-feed
   - jekyll-get-json
   - jekyll-imagemagick
-  - jekyll-jupyter-notebook
   - jekyll-link-attributes
   - jekyll-minifier
   - jekyll-paginate-v2
