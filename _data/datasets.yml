@@ -1,0 +1,49 @@
+- id: teleworkability-index
+  title: "Teleworkability Index"
+  authors:
+    - Mitchell Valdes-Bobes
+    - Anna Lukianova
+  year: 2025
+  description: >
+    A continuous, occupation-level index measuring the fraction of work 
+    that can be performed remotely. Constructed using O*NET features and 
+    ORS survey labels via two-stage Random Forest pipeline. Covers 873 
+    SOC occupations with model performance: R² = 0.93, Correlation = 0.97.
+    Stage 1 classifies zero/non-zero teleworkability (F1 = 0.96), Stage 2 
+    predicts the teleworkability fraction for non-zero occupations (MAE = 0.046).
+  preview: teleworkability_preview.png
+  downloads:
+    - label: "Full Dataset (CSV)"
+      url: "https://github.com/mitchv34/teleworkability-index/raw/main/results/full_occupation_predictions.csv"
+      size: "33 KB"
+      description: "Predictions for all 873 occupations"
+    - label: "Model Metrics"
+      url: "https://github.com/mitchv34/teleworkability-index/raw/main/results/model_metrics.csv"
+      size: "0.2 KB"
+      description: "Training, test, and overall performance"
+    - label: "Classifier Features"
+      url: "https://github.com/mitchv34/teleworkability-index/raw/main/results/classifier_feature_importance.csv"
+      size: "17 KB"
+      description: "Feature importance for zero/non-zero classification"
+    - label: "Regressor Features"
+      url: "https://github.com/mitchv34/teleworkability-index/raw/main/results/regressor_feature_importance.csv"
+      size: "18 KB"
+      description: "Feature importance for teleworkability prediction"
+  interactive:
+    - label: "Explore Data"
+      url: "/projects/teleworkability-index/notebooks/explore_index.html"
+      description: "Filter, search, and visualize the index interactively"
+    - label: "Retrain Model"
+      url: "/projects/teleworkability-index/notebooks/retrain_model.html"
+      description: "Adjust hyperparameters and retrain in your browser"
+    - label: "Feature Analysis"
+      url: "/projects/teleworkability-index/notebooks/feature_explorer.html"
+      description: "Explore which O*NET features drive teleworkability"
+  documentation:
+    - label: "GitHub Repository"
+      url: "https://github.com/mitchv34/teleworkability-index"
+    - label: "Setup Guide"
+      url: "/TELEWORKABILITY_SETUP"
+  paper: valdes_bobes_jmp_2025
+  tags: ["labor", "remote-work", "machine-learning", "O*NET", "occupations"]
+  featured: true
