@@ -21,6 +21,19 @@ manage_gemfile_lock() {
 
 start_jekyll() {
     manage_gemfile_lock
+    
+    # Build marimo notebooks if marimo is available
+    if command -v marimo &> /dev/null || python3 -m marimo --version &> /dev/null 2>&1; then
+        if [ -f build_notebooks.py ]; then
+            echo "🔧 Building marimo notebooks..."
+            if python3 build_notebooks.py; then
+                echo "✓ Marimo notebooks built successfully"
+            else
+                echo "⚠ Warning: Failed to build marimo notebooks"
+            fi
+        fi
+    fi
+    
     bundle exec jekyll serve --watch --port=8080 --host=0.0.0.0 --livereload --verbose --trace --force_polling &
 }
 

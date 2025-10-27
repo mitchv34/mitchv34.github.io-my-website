@@ -1,9 +1,24 @@
 # Hook to build marimo notebooks before Jekyll build
 # Place in _plugins/build_marimo_notebooks.rb
 
-Jekyll::Hooks.register :site, :after_init do |site|
-  puts "🔧 Building marimo notebooks..."
+def should_rebuild_notebooks?
+  # Check if source notebooks are newer than built HTML files
+  source_notebooks = Dir.glob("notebooks/**/*.py") + Dir.glob("projects/**/notebooks/**/*.py")
+  return true if source_notebooks.empty? # No notebooks found, skip rebuild
   
+  return true unless Dir.exist?("marimo_site") # marimo_site doesn't exist, need to build
+  
+  built_html = Dir.glob("marimo_site/**/*.html")
+  return true if built_html.empty? # No built HTML, need to build
+  
+  # Compare modification times
+  newest_source = source_notebooks.map { |f| File.mtime(f) }.max
+  oldest_built = built_html.map { |f| File.mtime(f) }.min
+  
+  newest_source > oldest_built
+end
+
+Jekyll::Hooks.register :site, :after_init do |site|
   # Check if marimo is installed
   unless system("which marimo > /dev/null 2>&1") || system("python -m marimo --version > /dev/null 2>&1")
     puts "⚠ Warning: marimo not found. Install with: pip install marimo"
@@ -11,21 +26,28 @@ Jekyll::Hooks.register :site, :after_init do |site|
     next
   end
   
-  # Build notebooks
-  result = system("python build_notebooks.py 2>&1")
-  
-  if result && $?.success?
-    puts "✓ Marimo notebooks built successfully"
+  # Check if rebuild is needed
+  if should_rebuild_notebooks?
+    puts "🔧 Building marimo notebooks..."
     
-    # Verify output exists
-    if Dir.exist?("marimo_site") && !Dir.empty?("marimo_site")
-      puts "✓ Verified marimo_site directory created"
+    # Build notebooks
+    result = system("python build_notebooks.py 2>&1")
+    
+    if result && $?.success?
+      puts "✓ Marimo notebooks built successfully"
+      
+      # Verify output exists
+      if Dir.exist?("marimo_site") && !Dir.empty?("marimo_site")
+        puts "✓ Verified marimo_site directory created"
+      else
+        puts "⚠ Warning: marimo_site directory not found or empty"
+      end
     else
-      puts "⚠ Warning: marimo_site directory not found or empty"
+      puts "⚠ Warning: Failed to build marimo notebooks"
+      puts "   Site will build without interactive notebooks"
     end
   else
-    puts "⚠ Warning: Failed to build marimo notebooks"
-    puts "   Site will build without interactive notebooks"
+    puts "ℹ Marimo notebooks are up to date, skipping rebuild"
   end
 end
 

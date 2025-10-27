@@ -32,7 +32,7 @@ RUN apt-get update -y && \
         procps \
         python3-pip \
         zlib1g-dev && \
-    pip --no-cache-dir install --upgrade --break-system-packages nbconvert
+    pip --no-cache-dir install --upgrade --break-system-packages nbconvert marimo
 
 # clean up
 RUN apt-get clean && \
@@ -56,9 +56,13 @@ RUN mkdir /srv/jekyll
 # copy the Gemfile and Gemfile.lock to the image
 ADD Gemfile.lock /srv/jekyll
 ADD Gemfile /srv/jekyll
+ADD requirements.txt /srv/jekyll
 
 # set the working directory
 WORKDIR /srv/jekyll
+
+# install Python dependencies for marimo notebooks
+RUN pip --no-cache-dir install --upgrade --break-system-packages -r requirements.txt
 
 # install jekyll and dependencies
 RUN gem install --no-document jekyll bundler
