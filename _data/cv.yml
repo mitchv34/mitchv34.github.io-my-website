@@ -21,6 +21,27 @@
       year: 2009 - 2014
       location: Cuba
 
+- title: References
+  type: time_table
+  contents:
+    - title: "Rasmus Lentz"
+      institution: "Professor of Economics, UW Madison"
+      website: "https://sites.google.com/a/wisc.edu/rasmus-lentz/home?authuser=0"
+      phone: "(608) 262-5373"
+      email: "rlentz@wisc.edu"  
+    - title: "J. Carter Braxton"
+      institution: "Assistant Professor of Economics, UW Madison"
+      website: "https://sites.google.com/site/jcarterbraxton/home?authuser=0"
+      phone: "(608) 265-2620"
+      email: "jcbraxton@wisc.edu"
+    - title: "Keneth D. West"
+      institution: "Professor of Economics, UW Madison"
+      website: "www.ssc.wisc.edu/~kwest"
+      phone: " (608) 262-0033"
+      email: "kdwest@wisc.edu"
+    
+
+
 - title: Research Interests
   type: list
   contents:
@@ -170,6 +191,14 @@
 - title: Technical Skills
   type: list_groups
   contents:
+    - category: Economics
+      icon: fas fa-chart-bar
+      items:
+        - Econometric Analysis
+        - Structural Estimation
+        - Labor Economics
+        - Macroeconomic Modeling
+
     - category: Programming
       icon: fas fa-code
       items:
@@ -192,7 +221,7 @@
         - Predictive Analytics
         - Natural Language Processing
         
-    - category: Mathematical Tools
+    - category: Mathematics
       icon: fas fa-calculator
       items:
         - Optimization
@@ -208,13 +237,6 @@
         - Git
         - Advanced Excel
         - Tableau, Power BI
-        
-    - category: Operating Systems
-      icon: fas fa-desktop
-      items:
-        - Linux
-        - macOS
-        - Windows
 
 - title: Seminars and Schools
   type: time_table
@@ -230,5 +252,3 @@
   contents:
     - <u>Languages:</u> English (fluent), Spanish (native)
     - <u>Status:</u> US Permanent Resident
-    - <u>Citizenship:</u> Cuba
-

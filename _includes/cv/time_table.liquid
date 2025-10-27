@@ -29,7 +29,11 @@
         {% endif %}
         <div class="col-xs-10 cl-sm-10 col-md-10 mt-2 mt-md-0">
           {% if content.title %}
-            <h6 class="title font-weight-bold ml-1 ml-md-4">{{ content.title }}</h6>
+            {% if content.website %}
+              <h6 class="title font-weight-bold ml-1 ml-md-4"><a href="{{ content.website }}" target="_blank">{{ content.title }}</a></h6>
+            {% else %}
+              <h6 class="title font-weight-bold ml-1 ml-md-4">{{ content.title }}</h6>
+            {% endif %}
           {% endif %}
           {% if content.department or content.institution %}
             <table class="table-cv ml-1 ml-md-4 institution">
@@ -110,6 +114,28 @@
                 {% endif %}
               {% endfor %}
             </div>
+          {% endif %}
+          {% if content.email or content.phone %}
+            <table class="table-cv ml-1 ml-md-4 contact-info">
+              <tbody>
+                {% if content.email %}
+                  <tr>
+                    <td style="vertical-align: top; text-align: center">
+                      <i class="fa-solid fa-envelope"></i>
+                    </td>
+                    <td><a href="mailto:{{ content.email }}">{{ content.email }}</a></td>
+                  </tr>
+                {% endif %}
+                {% if content.phone %}
+                  <tr>
+                    <td style="vertical-align: top; text-align: center">
+                      <i class="fa-solid fa-phone"></i>
+                    </td>
+                    <td>{{ content.phone }}</td>
+                  </tr>
+                {% endif %}
+              </tbody>
+            </table>
           {% endif %}
         </div>
       </div>

@@ -1,17 +1,10 @@
 $(document).ready(function () {
-  // add toggle functionality to abstract, award and bibtex buttons
-  $("a.abstract").click(function () {
-    $(this).parent().parent().find(".abstract.hidden").toggleClass("open");
-    $(this).parent().parent().find(".award.hidden.open").toggleClass("open");
-    $(this).parent().parent().find(".bibtex.hidden.open").toggleClass("open");
-  });
+  // add toggle functionality to award and bibtex buttons (abstract always shown)
   $("a.award").click(function () {
-    $(this).parent().parent().find(".abstract.hidden.open").toggleClass("open");
     $(this).parent().parent().find(".award.hidden").toggleClass("open");
     $(this).parent().parent().find(".bibtex.hidden.open").toggleClass("open");
   });
   $("a.bibtex").click(function () {
-    $(this).parent().parent().find(".abstract.hidden.open").toggleClass("open");
     $(this).parent().parent().find(".award.hidden.open").toggleClass("open");
     $(this).parent().parent().find(".bibtex.hidden").toggleClass("open");
   });
@@ -57,20 +50,29 @@ $(document).ready(function () {
     trigger: "hover",
   });
 
-  // Simple navbar toggle
-  console.log('Setting up navbar toggle...');
+  // Ensure Bootstrap navbar toggle works properly
+  $('.navbar-toggler').on('click', function() {
+    var target = $($(this).data('target'));
+    target.toggleClass('show');
+    
+    // Update button's aria-expanded attribute
+    var expanded = target.hasClass('show');
+    $(this).attr('aria-expanded', expanded);
+  });
 
-  $(document).on('click', '.navbar-toggler', function(e) {
-    e.preventDefault();
-    console.log('Navbar toggle clicked!');
+  // Handle dropdown clicks for mobile
+  $('.dropdown-toggle').on('click', function(e) {
+    if ($(window).width() < 992) { // Only on mobile
+      e.preventDefault();
+      var $dropdown = $(this).next('.dropdown-menu');
+      $dropdown.toggleClass('show');
+    }
+  });
 
-    var $menu = $('#navbarNav');
-    console.log('Menu element found:', $menu.length);
-
-    $menu.toggleClass('show');
-    console.log('Menu classes after toggle:', $menu.attr('class'));
-
-    // Toggle button state
-    $(this).toggleClass('collapsed');
+  // Close dropdown when clicking outside
+  $(document).on('click', function(e) {
+    if (!$(e.target).closest('.dropdown').length) {
+      $('.dropdown-menu').removeClass('show');
+    }
   });
 });

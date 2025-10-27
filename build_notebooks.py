@@ -96,7 +96,8 @@ def main():
         for project_dir in projects_dir.glob("*/"):
             if (project_dir / "notebooks").exists():
                 print(f"Found notebooks in {project_dir.name}")
-                project_notebooks = export_folder(project_dir / "notebooks", output_dir, as_app=False)
+                # Export as apps (run mode, no code visible)
+                project_notebooks = export_folder(project_dir / "notebooks", output_dir, as_app=True)
                 notebooks_data.extend(project_notebooks)
     
     # Generate index

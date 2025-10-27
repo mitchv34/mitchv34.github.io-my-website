@@ -45,6 +45,10 @@
 <!-- Fonts & Icons -->
 <link defer rel="stylesheet" href="/assets/css/academicons.min.css?f0b7046b84e425c55f3463ac249818f5">
 <link defer rel="stylesheet" href="/assets/css/scholar-icons.css?62b2ac103a88034e6882a5be5f3e2772">
+<!-- Font Awesome CDN fallback -->
+<link defer rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous">
+<!-- Academicons CDN fallback -->
+<link defer rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css" integrity="sha512-IW0nhlW5MgNydsXJO40En2EoCkTTjZhI3yuODrZIc8cQ4h1XcF53PsqDHa09NqnkXuIe0Oiyyj171BqZFwISBw==" crossorigin="anonymous">
 <link defer rel="stylesheet" type="text/css" href="">
 
 <!-- Code Syntax Highlighting -->
@@ -60,7 +64,7 @@
   <link rel="shortcut icon" href="/assets/img/creative-thinking.ico?ef746eb9b233aadbaea0ce34e1da6237">
 
 <link rel="stylesheet" href="/assets/css/main.css?d41d8cd98f00b204e9800998ecf8427e">
-<link rel="canonical" href="http://localhost:4001/blog/tag/diagrams/">
+<link rel="canonical" href="http://localhost:4003/blog/tag/diagrams/">
 
 <!-- Dark Mode -->
 <script src="/assets/js/theme.js?a81d82887dd692e91686b43de4542f18"></script>
@@ -239,13 +243,22 @@
               
                 
                 <li class="nav-item ">
-                  <a class="nav-link" href="/cv/">cv
+                  <a class="nav-link" href="/publications/">Research
                     
                   </a>
                 </li>
               
             
           
+            
+              
+                
+                <li class="nav-item ">
+                  <a class="nav-link" href="/cv/">CV
+                    
+                  </a>
+                </li>
+              
             
           
             
@@ -254,7 +267,20 @@
               
                 
                 <li class="nav-item ">
-                  <a class="nav-link" href="/repositories/">repositories
+                  <a class="nav-link" href="/repositories/">Repositories
+                    
+                  </a>
+                </li>
+              
+            
+          
+            
+          
+            
+              
+                
+                <li class="nav-item ">
+                  <a class="nav-link" href="/data/">Data &amp; Code
                     
                   </a>
                 </li>
@@ -265,25 +291,13 @@
           
             
           
-            
-          
-            
           
           
-            <!-- Search -->
-            <li class="nav-item">
-              <button id="search-toggle" title="Search" onclick="openSearchModal()">
-                <span class="nav-link">ctrl k <i class="ti ti-search"></i></span>
-              </button>
-            </li>
-          
-          
-            <!-- Toogle theme mode -->
+            <!-- Toggle theme mode -->
             <li class="toggle-container">
               <button id="light-toggle" title="Change theme">
-                <i class="ti ti-sun-moon" id="light-toggle-system"></i>
-                <i class="ti ti-moon-filled" id="light-toggle-dark"></i>
-                <i class="ti ti-sun-filled" id="light-toggle-light"></i>
+                <i class="fa-solid fa-moon"></i>
+                <i class="fa-solid fa-sun"></i>
               </button>
             </li>
           
@@ -377,8 +391,7 @@
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 
 <!-- Bootsrap & MDB scripts -->
-<script src="/assets/js/bootstrap.bundle.min.js"></script>
-<script src="" integrity="" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
 
 
   <!-- Masonry & imagesLoaded -->
@@ -419,7 +432,7 @@
 
 <!-- Load Common JS -->
 <script src="/assets/js/no_defer.js?2781658a0a2b13ed609542042a859126"></script>
-<script defer src="/assets/js/common.js?aec580446fa9912d5724fcaa0311c83d"></script>
+<script defer src="/assets/js/common.js?f0f0a49ec11608001f763cd25ca94889"></script>
 <script defer src="/assets/js/copy_code.js?c8a01c11a92744d44b093fc3bda915df" type="text/javascript"></script>
 
 <!-- Jupyter Open External Links New Tab -->
@@ -465,13 +478,6 @@
   </script>
 
 
-
-  <!-- Search -->
-  <script type="module" src="/assets/js/search/ninja-keys.min.js?a3446f084dcaecc5f75aa1757d087dcf"></script>
-  <ninja-keys hidebreadcrumbs noautoloadmdicons placeholder="Type to start searching"></ninja-keys>
-  <script src="/assets/js/search-setup.js?6c304f7b1992d4b60f7a07956e52f04a"></script>
-  <script src="/assets/js/search-data.js"></script>
-  <script src="/assets/js/shortcut-key.js?6f508d74becd347268a7f822bca7309d"></script>
 
 
 
