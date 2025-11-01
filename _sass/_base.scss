@@ -707,6 +707,11 @@ footer.sticky-bottom {
 
 .publications {
   margin-top: 2rem;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 4rem;
+  padding-right: 4rem;
 
   h1 {
     color: var(--global-theme-color);
@@ -830,6 +835,15 @@ footer.sticky-bottom {
           &:hover {
             text-decoration: underline;
           }
+        }
+      }
+
+      .abstract {
+        text-align: justify;
+        
+        p {
+          line-height: 1.6em;
+          margin: 10px 0;
         }
       }
 
