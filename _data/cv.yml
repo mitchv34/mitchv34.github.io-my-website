@@ -53,17 +53,14 @@
 - title: Working Papers
   type: time_table
   contents:
-    - title: "Work-From-Home and the Wage Premium"
+    - title: "Why Remote Work Stuck: A Structural Decomposition of the Post-Pandemic Equilibrium"
       year: JMP
       description: with Anna Lukianova
       
-    - title: "Spatial Sorting of Heterogeneous Workers and Firms"
+    - title: "AI's Dual Impact on Labor Markets: Automation, Augmentation, and Human Capital"
       year: Working Paper
       
     - title: "Industry Workforce Heterogeneity and Wage Inequality"
-      year: Working Paper
-      
-    - title: "Matching Problem in a Multi-Variate Setting"
       year: Working Paper
 
 - title: Experience
