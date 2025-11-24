@@ -4,6 +4,7 @@ github_users:
 repo_description_lines_max: 2
 
 github_repos:
-  - mitchv34/searching_flexibility
+  - mitchv34/why_remote_work_stuck
   - mitchv34/industry_skill_premium
+  - mitchv34/ai-labor-market
   - mitchv34/fundamentals-of-data-analytics-for-economists

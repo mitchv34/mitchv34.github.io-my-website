@@ -218,10 +218,10 @@ plugins:
   - jekyll/scholar
   - jekyll-sitemap
   - jekyll-tabs
-  - jekyll-terser
   - jekyll-toc
   - jekyll-twitter-plugin
   - jemoji
+# Note: jekyll-terser disabled - it breaks marimo notebook JavaScript bundles
 
 # Sitemap settings
 defaults:
@@ -239,7 +239,7 @@ sass:
 
 jekyll-minifier:
   compress_javascript: false # set to false since we are using terser as the js minifier
-  exclude: ["robots.txt", "assets/js/search/*.js"]
+  exclude: ["robots.txt", "assets/js/search/*.js", "notebooks/**/*", "projects/**/notebooks/**/*"]
 
 # -----------------------------------------------------------------------------
 # Terser

@@ -25,17 +25,20 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-Welcome to my academic website! I’m Mitchell Valdes-Bobes, a sixth-year PhD candidate in Economics at the University of Wisconsin–Madison. My work sits at the intersection of macroeconomics and labor economics, where I use structural search models to study how policy and firm organization shape labor-market outcomes.
+Welcome to my academic website! I’m Mitchell Valdes-Bobes, a PhD candidate in Economics at the University of Wisconsin–Madison. My work sits at the intersection of labor economics and macroeconomics, where I use structural search models to study how policy and firm organization shape labor-market outcomes.
 
 **Research Interests:**
 
-- Labor market dynamics
-- Search and matching theory
-- Policy impacts on employment
+- Labor-market search, mobility, and compensation.
+- Macroeconomic shocks and their effects on labor markets.
+- Causal inference & applied econometrics
+- Labor and workforce data science
+- Machine learning for labor-market analysis.
+
 
 **Current Focus:**
 
 - Analyzing the effects of remote work on labor market outcomes.
 - Exploring the implications of generative AI on labor markets.
 
-Please don't hesitate to contact me if you have questions about my work or are interested in potential collaborations.
+Please don't hesitate to contact me at [valdsbobes@wisc.edu](mailto:valdsbobes@wisc.edu) if you have questions about my work or are interested in potential collaborations.

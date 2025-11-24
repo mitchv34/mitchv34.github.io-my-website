@@ -25,6 +25,26 @@ if [ -d "marimo_site" ]; then
         cp -r marimo_site/projects/* _site/projects/
         echo "✓ Copied project notebooks"
     fi
+    
+    # Copy data and results directories for projects (needed for notebook data access)
+    # This copies directories from source projects to maintain relative paths
+    for project_dir in projects/*/; do
+        project_name=$(basename "$project_dir")
+        
+        if [ -d "${project_dir}data" ] || [ -d "${project_dir}results" ]; then
+            mkdir -p "_site/projects/$project_name"
+            
+            if [ -d "${project_dir}data" ]; then
+                cp -r "${project_dir}data" "_site/projects/$project_name/"
+                echo "✓ Copied data for $project_name"
+            fi
+            
+            if [ -d "${project_dir}results" ]; then
+                cp -r "${project_dir}results" "_site/projects/$project_name/"
+                echo "✓ Copied results for $project_name"
+            fi
+        fi
+    done
 else
     echo "⚠ Warning: marimo_site not found. Run 'python build_notebooks.py' first"
 fi

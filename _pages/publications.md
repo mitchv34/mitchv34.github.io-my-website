@@ -15,6 +15,12 @@ nav_order: 2
 
 <div class="publications">
 
-{% bibliography %}
+<h2>Working Papers</h2>
+
+{% bibliography --query @*[status=working]* %}
+
+<h2>Work in Progress</h2>
+
+{% bibliography --query @*[status=wip]* %}
 
 </div>
