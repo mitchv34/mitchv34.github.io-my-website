@@ -33,4 +33,3 @@ Below are some of the key areas that I am actively exploring or have contributed
 *Example: Looking ahead, I am keen to explore the synergies between [Research Area X] and [Research Area Y]. I believe that integrating insights from these fields could lead to breakthroughs in [Overarching Goal]. I am also interested in investigating [New Emerging Topic].*
 
 I am always open to discussing new ideas and potential collaborations. Please feel free to reach out if you share similar research interests.
-
